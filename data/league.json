@@ -156,13 +156,13 @@
     "a": "Doug",
     "as": 132.5,
     "b": "Mayhew",
-    "bs": 151
+    "bs": 151.0
    },
    {
     "id": "espn4_13",
     "wk": 4,
     "a": "Proud",
-    "as": 88,
+    "as": 88.0,
     "b": "Mr Coin",
     "bs": 98.5
    },
@@ -170,7 +170,7 @@
     "id": "espn4_14",
     "wk": 4,
     "a": "Andrew",
-    "as": 110,
+    "as": 110.0,
     "b": "Kingy",
     "bs": 82.5
    },
@@ -178,7 +178,7 @@
     "id": "espn4_15",
     "wk": 4,
     "a": "TimO",
-    "as": 88,
+    "as": 88.0,
     "b": "Joe",
     "bs": 100.5
    },
@@ -186,9 +186,9 @@
     "id": "espn5_16",
     "wk": 5,
     "a": "Proud",
-    "as": 147,
+    "as": 147.0,
     "b": "Doug",
-    "bs": 111
+    "bs": 111.0
    },
    {
     "id": "espn5_17",
@@ -196,7 +196,7 @@
     "a": "Mayhew",
     "as": 89.5,
     "b": "Andrew",
-    "bs": 111
+    "bs": 111.0
    },
    {
     "id": "espn5_18",
@@ -210,15 +210,15 @@
     "id": "espn5_19",
     "wk": 5,
     "a": "Kingy",
-    "as": 90,
+    "as": 90.0,
     "b": "Joe",
-    "bs": 140
+    "bs": 140.0
    },
    {
     "id": "espn6_2_1",
     "wk": 6,
     "a": "Joe",
-    "as": 108,
+    "as": 108.0,
     "b": "Mayhew",
     "bs": 82.5
    },
@@ -228,7 +228,7 @@
     "a": "Doug",
     "as": 81.5,
     "b": "Andrew",
-    "bs": 93
+    "bs": 93.0
    },
    {
     "id": "espn6_6_3",
@@ -236,13 +236,13 @@
     "a": "TimO",
     "as": 97.5,
     "b": "Proud",
-    "bs": 95
+    "bs": 95.0
    },
    {
     "id": "espn6_7_8",
     "wk": 6,
     "a": "Kingy",
-    "as": 75,
+    "as": 75.0,
     "b": "Mr Coin",
     "bs": 99.5
    }
@@ -909,49 +909,49 @@
    ]
   }
  ],
- "updated": "23 Oct 2026",
+ "updated": "25 Oct 2026",
  "live": {
   "week": 7,
   "playoffs": false,
-  "updated": "2026-10-23T14:10+10:00",
+  "updated": "2026-10-25T16:56+10:00",
   "matchups": [
    {
     "a": "TimO",
     "an": "Run CMC",
     "as": 0,
-    "ap": 0.37,
-    "aj": 110,
+    "ap": 0.51,
+    "aj": 107,
     "b": "Doug",
     "bn": "King Henry VIII",
     "bs": 0,
-    "bp": 0.63,
-    "bj": 127,
+    "bp": 0.49,
+    "bj": 105,
     "final": false
    },
    {
     "a": "Andrew",
     "an": "No Fourths Given",
     "as": 0,
-    "ap": 0.32,
-    "aj": 99,
+    "ap": 0.31,
+    "aj": 97,
     "b": "Joe",
     "bn": "Peter Mahomes",
-    "bs": 24,
-    "bp": 0.68,
+    "bs": 24.0,
+    "bp": 0.69,
     "bj": 117,
     "final": false
    },
    {
     "a": "Proud",
     "an": "TUTEN MY OWN HORN",
-    "as": 21,
-    "ap": 0.49,
-    "aj": 112,
+    "as": 21.0,
+    "ap": 0.5,
+    "aj": 109,
     "b": "Kingy",
     "bn": "Purdy Mouth",
     "bs": 0,
-    "bp": 0.51,
-    "bj": 112,
+    "bp": 0.5,
+    "bj": 109,
     "final": false
    },
    {
@@ -959,12 +959,12 @@
     "an": "Boiling Kittle",
     "as": 5.5,
     "ap": 0.4,
-    "aj": 108,
+    "aj": 110,
     "b": "Mr Coin",
     "bn": "Mr Coin 2.0",
     "bs": 26.5,
     "bp": 0.6,
-    "bj": 119,
+    "bj": 120,
     "final": false
    }
   ]

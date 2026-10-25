@@ -1,0 +1,972 @@
+{
+ "league": "All Time NFL Fantasy League",
+ "current": {
+  "year": 2026,
+  "baseline": {
+   "Mayhew": {
+    "w": 0,
+    "l": 0,
+    "pf": 0,
+    "pa": 0
+   },
+   "Joe": {
+    "w": 0,
+    "l": 0,
+    "pf": 0,
+    "pa": 0
+   },
+   "Proud": {
+    "w": 0,
+    "l": 0,
+    "pf": 0,
+    "pa": 0
+   },
+   "Andrew": {
+    "w": 0,
+    "l": 0,
+    "pf": 0,
+    "pa": 0
+   },
+   "Doug": {
+    "w": 0,
+    "l": 0,
+    "pf": 0,
+    "pa": 0
+   },
+   "TimO": {
+    "w": 0,
+    "l": 0,
+    "pf": 0,
+    "pa": 0
+   },
+   "Kingy": {
+    "w": 0,
+    "l": 0,
+    "pf": 0,
+    "pa": 0
+   },
+   "Mr Coin": {
+    "w": 0,
+    "l": 0,
+    "pf": 0,
+    "pa": 0
+   }
+  },
+  "baselineWeek": 0,
+  "games": [
+   {
+    "id": "espn1_0",
+    "wk": 1,
+    "a": "Joe",
+    "as": 144.5,
+    "b": "Doug",
+    "bs": 123.5
+   },
+   {
+    "id": "espn1_1",
+    "wk": 1,
+    "a": "TimO",
+    "as": 107,
+    "b": "Kingy",
+    "bs": 111
+   },
+   {
+    "id": "espn1_2",
+    "wk": 1,
+    "a": "Andrew",
+    "as": 112.5,
+    "b": "Mr Coin",
+    "bs": 120.5
+   },
+   {
+    "id": "espn1_3",
+    "wk": 1,
+    "a": "Proud",
+    "as": 110,
+    "b": "Mayhew",
+    "bs": 91.5
+   },
+   {
+    "id": "espn2_4",
+    "wk": 2,
+    "a": "Doug",
+    "as": 94.5,
+    "b": "Kingy",
+    "bs": 128.5
+   },
+   {
+    "id": "espn2_5",
+    "wk": 2,
+    "a": "Mr Coin",
+    "as": 119,
+    "b": "Joe",
+    "bs": 112.5
+   },
+   {
+    "id": "espn2_6",
+    "wk": 2,
+    "a": "Mayhew",
+    "as": 82.5,
+    "b": "TimO",
+    "bs": 132
+   },
+   {
+    "id": "espn2_7",
+    "wk": 2,
+    "a": "Proud",
+    "as": 90.5,
+    "b": "Andrew",
+    "bs": 86.5
+   },
+   {
+    "id": "espn3_10",
+    "wk": 3,
+    "a": "Joe",
+    "as": 82.5,
+    "b": "Proud",
+    "bs": 144.5
+   },
+   {
+    "id": "espn3_11",
+    "wk": 3,
+    "a": "TimO",
+    "as": 105.5,
+    "b": "Andrew",
+    "bs": 96.5
+   },
+   {
+    "id": "espn3_8",
+    "wk": 3,
+    "a": "Mr Coin",
+    "as": 120.5,
+    "b": "Doug",
+    "bs": 100
+   },
+   {
+    "id": "espn3_9",
+    "wk": 3,
+    "a": "Kingy",
+    "as": 73.5,
+    "b": "Mayhew",
+    "bs": 102
+   },
+   {
+    "id": "espn4_12",
+    "wk": 4,
+    "a": "Doug",
+    "as": 132.5,
+    "b": "Mayhew",
+    "bs": 151
+   },
+   {
+    "id": "espn4_13",
+    "wk": 4,
+    "a": "Proud",
+    "as": 88,
+    "b": "Mr Coin",
+    "bs": 98.5
+   },
+   {
+    "id": "espn4_14",
+    "wk": 4,
+    "a": "Andrew",
+    "as": 110,
+    "b": "Kingy",
+    "bs": 82.5
+   },
+   {
+    "id": "espn4_15",
+    "wk": 4,
+    "a": "TimO",
+    "as": 88,
+    "b": "Joe",
+    "bs": 100.5
+   },
+   {
+    "id": "espn5_16",
+    "wk": 5,
+    "a": "Proud",
+    "as": 147,
+    "b": "Doug",
+    "bs": 111
+   },
+   {
+    "id": "espn5_17",
+    "wk": 5,
+    "a": "Mayhew",
+    "as": 89.5,
+    "b": "Andrew",
+    "bs": 111
+   },
+   {
+    "id": "espn5_18",
+    "wk": 5,
+    "a": "Mr Coin",
+    "as": 109.5,
+    "b": "TimO",
+    "bs": 118.5
+   },
+   {
+    "id": "espn5_19",
+    "wk": 5,
+    "a": "Kingy",
+    "as": 90,
+    "b": "Joe",
+    "bs": 140
+   },
+   {
+    "id": "espn6_2_1",
+    "wk": 6,
+    "a": "Joe",
+    "as": 108,
+    "b": "Mayhew",
+    "bs": 82.5
+   },
+   {
+    "id": "espn6_5_4",
+    "wk": 6,
+    "a": "Doug",
+    "as": 81.5,
+    "b": "Andrew",
+    "bs": 93
+   },
+   {
+    "id": "espn6_6_3",
+    "wk": 6,
+    "a": "TimO",
+    "as": 97.5,
+    "b": "Proud",
+    "bs": 95
+   },
+   {
+    "id": "espn6_7_8",
+    "wk": 6,
+    "a": "Kingy",
+    "as": 75,
+    "b": "Mr Coin",
+    "bs": 99.5
+   }
+  ]
+ },
+ "history": [
+  {
+   "year": 2025,
+   "teams": [
+    {
+     "team": "TimO",
+     "w": 10,
+     "l": 4,
+     "pf": 1683.12,
+     "pa": 1474.46,
+     "finish": 3
+    },
+    {
+     "team": "Mayhew",
+     "w": 9,
+     "l": 5,
+     "pf": 1597.5,
+     "pa": 1557.44,
+     "finish": 2
+    },
+    {
+     "team": "Andrew",
+     "w": 7,
+     "l": 7,
+     "pf": 1702.86,
+     "pa": 1501.14,
+     "finish": 5
+    },
+    {
+     "team": "Mr Coin",
+     "w": 7,
+     "l": 7,
+     "pf": 1607.68,
+     "pa": 1515.72,
+     "finish": 1
+    },
+    {
+     "team": "Kingy",
+     "w": 7,
+     "l": 7,
+     "pf": 1463.72,
+     "pa": 1583.54,
+     "finish": 6
+    },
+    {
+     "team": "Proud",
+     "w": 6,
+     "l": 8,
+     "pf": 1552.98,
+     "pa": 1567.36,
+     "finish": 4
+    },
+    {
+     "team": "Joe",
+     "w": 6,
+     "l": 8,
+     "pf": 1467.32,
+     "pa": 1624.48,
+     "finish": 8
+    },
+    {
+     "team": "Doug",
+     "w": 4,
+     "l": 10,
+     "pf": 1248.42,
+     "pa": 1499.46,
+     "finish": 7
+    }
+   ]
+  },
+  {
+   "year": 2024,
+   "teams": [
+    {
+     "team": "Mayhew",
+     "w": 11,
+     "l": 3,
+     "pf": 1914.34,
+     "pa": 1790.42,
+     "finish": 1
+    },
+    {
+     "team": "Andrew",
+     "w": 7,
+     "l": 7,
+     "pf": 1768.98,
+     "pa": 1647.9,
+     "finish": 2
+    },
+    {
+     "team": "Joe",
+     "w": 7,
+     "l": 7,
+     "pf": 1590.64,
+     "pa": 1710.2,
+     "finish": 3
+    },
+    {
+     "team": "Doug",
+     "w": 6,
+     "l": 8,
+     "pf": 1679.96,
+     "pa": 1605.96,
+     "finish": 4
+    },
+    {
+     "team": "TimO",
+     "w": 6,
+     "l": 8,
+     "pf": 1552.08,
+     "pa": 1571.02,
+     "finish": 6
+    },
+    {
+     "team": "Proud",
+     "w": 5,
+     "l": 9,
+     "pf": 1533.36,
+     "pa": 1713.86,
+     "finish": 5
+    }
+   ]
+  },
+  {
+   "year": 2023,
+   "teams": [
+    {
+     "team": "Doug",
+     "w": 9,
+     "l": 5,
+     "pf": 1710.5,
+     "pa": 1557.72,
+     "finish": 3
+    },
+    {
+     "team": "Mayhew",
+     "w": 8,
+     "l": 6,
+     "pf": 1700.54,
+     "pa": 1690.78,
+     "finish": 1
+    },
+    {
+     "team": "Andrew",
+     "w": 8,
+     "l": 6,
+     "pf": 1550.52,
+     "pa": 1471.58,
+     "finish": 4
+    },
+    {
+     "team": "Proud",
+     "w": 8,
+     "l": 6,
+     "pf": 1516.72,
+     "pa": 1552.26,
+     "finish": 2
+    },
+    {
+     "team": "TimO",
+     "w": 6,
+     "l": 8,
+     "pf": 1569.78,
+     "pa": 1548.12,
+     "finish": 5
+    },
+    {
+     "team": "Joe",
+     "w": 3,
+     "l": 11,
+     "pf": 1451.76,
+     "pa": 1679.36,
+     "finish": 6
+    }
+   ]
+  },
+  {
+   "year": 2022,
+   "teams": [
+    {
+     "team": "Joe",
+     "w": 9,
+     "l": 5,
+     "pf": 1756.26,
+     "pa": 1647.7,
+     "finish": 1,
+     "note": "*",
+     "placeNote": "**"
+    },
+    {
+     "team": "Proud",
+     "w": 8,
+     "l": 6,
+     "pf": 1686.08,
+     "pa": 1564.16,
+     "finish": 3
+    },
+    {
+     "team": "Mayhew",
+     "w": 8,
+     "l": 6,
+     "pf": 1644.84,
+     "pa": 1733.38,
+     "finish": 2
+    },
+    {
+     "team": "TimO",
+     "w": 7,
+     "l": 7,
+     "pf": 1756.88,
+     "pa": 1677.74,
+     "finish": 4
+    },
+    {
+     "team": "Andrew",
+     "w": 5,
+     "l": 9,
+     "pf": 1696.7,
+     "pa": 1732.74,
+     "finish": 6
+    },
+    {
+     "team": "Doug",
+     "w": 5,
+     "l": 9,
+     "pf": 1618.78,
+     "pa": 1803.82,
+     "finish": 5
+    }
+   ]
+  },
+  {
+   "year": 2021,
+   "teams": [
+    {
+     "team": "Andrew",
+     "w": 10,
+     "l": 5,
+     "pf": 1859.84,
+     "pa": 1687.38,
+     "finish": 3
+    },
+    {
+     "team": "Proud",
+     "w": 8,
+     "l": 7,
+     "pf": 2011.48,
+     "pa": 1846.56,
+     "finish": 1
+    },
+    {
+     "team": "TimO",
+     "w": 8,
+     "l": 7,
+     "pf": 1871,
+     "pa": 1707.7,
+     "finish": 4
+    },
+    {
+     "team": "Mayhew",
+     "w": 8,
+     "l": 7,
+     "pf": 1729.04,
+     "pa": 1720.86,
+     "finish": 2
+    },
+    {
+     "team": "Doug",
+     "w": 7,
+     "l": 8,
+     "pf": 1640.16,
+     "pa": 1814.2,
+     "finish": 6
+    },
+    {
+     "team": "Joe",
+     "w": 4,
+     "l": 11,
+     "pf": 1507.86,
+     "pa": 1841.88,
+     "finish": 5
+    }
+   ]
+  },
+  {
+   "year": 2020,
+   "teams": [
+    {
+     "team": "Mayhew",
+     "w": 11,
+     "l": 3,
+     "pf": 1914.26,
+     "pa": 1670.7,
+     "finish": 3
+    },
+    {
+     "team": "TimO",
+     "w": 10,
+     "l": 4,
+     "pf": 1773.3,
+     "pa": 1558.94,
+     "finish": 2
+    },
+    {
+     "team": "Tyson",
+     "w": 8,
+     "l": 6,
+     "pf": 1807.62,
+     "pa": 1691.22,
+     "finish": 4
+    },
+    {
+     "team": "Proud",
+     "w": 5,
+     "l": 9,
+     "pf": 1574.6,
+     "pa": 1706.12,
+     "finish": 1
+    },
+    {
+     "team": "Joe",
+     "w": 4,
+     "l": 10,
+     "pf": 1504.46,
+     "pa": 1750.22,
+     "finish": 6
+    },
+    {
+     "team": "Andrew",
+     "w": 4,
+     "l": 10,
+     "pf": 1438.86,
+     "pa": 1635.62,
+     "finish": 5
+    }
+   ]
+  },
+  {
+   "year": 2019,
+   "teams": [
+    {
+     "team": "Proud",
+     "w": 10,
+     "l": 4,
+     "pf": 1867.46,
+     "pa": 1753,
+     "finish": 1
+    },
+    {
+     "team": "Mayhew",
+     "w": 9,
+     "l": 5,
+     "pf": 1676.64,
+     "pa": 1661.7,
+     "finish": 4
+    },
+    {
+     "team": "TimO",
+     "w": 7,
+     "l": 7,
+     "pf": 1935.16,
+     "pa": 1734.36,
+     "finish": 2
+    },
+    {
+     "team": "Tyson",
+     "w": 6,
+     "l": 8,
+     "pf": 1872.4,
+     "pa": 1871.34,
+     "finish": 3
+    },
+    {
+     "team": "Joe",
+     "w": 5,
+     "l": 9,
+     "pf": 1736.3,
+     "pa": 1927.72,
+     "finish": 6
+    },
+    {
+     "team": "Andrew",
+     "w": 5,
+     "l": 9,
+     "pf": 1627.46,
+     "pa": 1767.3,
+     "finish": 5
+    }
+   ]
+  },
+  {
+   "year": 2018,
+   "teams": [
+    {
+     "team": "TimO",
+     "w": 13,
+     "l": 1,
+     "pf": 1801.98,
+     "pa": 1436.66,
+     "finish": 3
+    },
+    {
+     "team": "Tyson",
+     "w": 9,
+     "l": 5,
+     "pf": 1745.38,
+     "pa": 1573.62,
+     "finish": 1
+    },
+    {
+     "team": "Proud",
+     "w": 8,
+     "l": 6,
+     "pf": 1767.18,
+     "pa": 1565.82,
+     "finish": 4
+    },
+    {
+     "team": "Mayhew",
+     "w": 6,
+     "l": 8,
+     "pf": 1454.2,
+     "pa": 1563.64,
+     "finish": 2
+    },
+    {
+     "team": "Joe",
+     "w": 4,
+     "l": 10,
+     "pf": 1456.1,
+     "pa": 1744.58,
+     "finish": 6
+    },
+    {
+     "team": "Andrew",
+     "w": 2,
+     "l": 12,
+     "pf": 1239.82,
+     "pa": 1580.5,
+     "finish": 5
+    }
+   ]
+  },
+  {
+   "year": 2017,
+   "teams": [
+    {
+     "team": "Mayhew",
+     "w": 10,
+     "l": 4,
+     "pf": 1464.02,
+     "pa": 1348.46,
+     "finish": 1
+    },
+    {
+     "team": "TimO",
+     "w": 9,
+     "l": 5,
+     "pf": 1480.8,
+     "pa": 1364.46,
+     "finish": 3
+    },
+    {
+     "team": "Tyson",
+     "w": 8,
+     "l": 6,
+     "pf": 1464.5,
+     "pa": 1329.3,
+     "finish": 2
+    },
+    {
+     "team": "Proud",
+     "w": 7,
+     "l": 7,
+     "pf": 1438.62,
+     "pa": 1355.5,
+     "finish": 4
+    },
+    {
+     "team": "Joe",
+     "w": 5,
+     "l": 9,
+     "pf": 1238.6,
+     "pa": 1511.34,
+     "finish": 6
+    },
+    {
+     "team": "Andrew",
+     "w": 3,
+     "l": 11,
+     "pf": 1213.72,
+     "pa": 1391.2,
+     "finish": 5
+    }
+   ]
+  },
+  {
+   "year": 2016,
+   "teams": [
+    {
+     "team": "Andrew",
+     "w": 9,
+     "l": 5,
+     "pf": 1747.86,
+     "pa": 1741.5,
+     "finish": 4
+    },
+    {
+     "team": "Joe",
+     "w": 9,
+     "l": 5,
+     "pf": 2005.88,
+     "pa": 1695.04,
+     "finish": 3
+    },
+    {
+     "team": "Mayhew",
+     "w": 9,
+     "l": 5,
+     "pf": 1835.14,
+     "pa": 1592.04,
+     "finish": 2
+    },
+    {
+     "team": "Tyson",
+     "w": 8,
+     "l": 6,
+     "pf": 1980.12,
+     "pa": 1921.56,
+     "finish": 1
+    },
+    {
+     "team": "Proud",
+     "w": 5,
+     "l": 9,
+     "pf": 1502,
+     "pa": 1657.72,
+     "finish": 5
+    },
+    {
+     "team": "TimO",
+     "w": 2,
+     "l": 12,
+     "pf": 1481.02,
+     "pa": 1944.5,
+     "finish": 6
+    }
+   ]
+  },
+  {
+   "year": 2015,
+   "teams": [
+    {
+     "team": "Proud",
+     "w": 10,
+     "l": 4,
+     "pf": 2213.34,
+     "pa": 1635.3,
+     "finish": 1
+    },
+    {
+     "team": "Joe",
+     "w": 7,
+     "l": 7,
+     "pf": 1872.16,
+     "pa": 1939.4,
+     "finish": 4
+    },
+    {
+     "team": "Mayhew",
+     "w": 6,
+     "l": 8,
+     "pf": 1627.32,
+     "pa": 1847.84,
+     "finish": 3
+    },
+    {
+     "team": "Andrew",
+     "w": 5,
+     "l": 9,
+     "pf": 1528.04,
+     "pa": 1818.34,
+     "finish": 2
+    }
+   ]
+  },
+  {
+   "year": 2014,
+   "teams": [
+    {
+     "team": "Proud",
+     "w": 12,
+     "l": 2,
+     "pf": 2157.04,
+     "pa": 1701.4,
+     "finish": 2
+    },
+    {
+     "team": "Mayhew",
+     "w": 7,
+     "l": 7,
+     "pf": 1991.54,
+     "pa": 1882.04,
+     "finish": 3
+    },
+    {
+     "team": "Joe",
+     "w": 5,
+     "l": 9,
+     "pf": 1572.92,
+     "pa": 1950.1,
+     "finish": 1
+    },
+    {
+     "team": "Andrew",
+     "w": 4,
+     "l": 10,
+     "pf": 1946.1,
+     "pa": 2134.06,
+     "finish": 4
+    }
+   ]
+  },
+  {
+   "year": 2013,
+   "teams": [
+    {
+     "team": "Mayhew",
+     "w": 9,
+     "l": 5,
+     "pf": 1812.02,
+     "pa": 1734.62,
+     "finish": 1
+    },
+    {
+     "team": "Andrew",
+     "w": 8,
+     "l": 6,
+     "pf": 1591.38,
+     "pa": 1522.68,
+     "finish": 4
+    },
+    {
+     "team": "Proud",
+     "w": 6,
+     "l": 8,
+     "pf": 1755.76,
+     "pa": 1800.1,
+     "finish": 2
+    },
+    {
+     "team": "Joe",
+     "w": 5,
+     "l": 9,
+     "pf": 1740.84,
+     "pa": 1842.6,
+     "finish": 3
+    }
+   ]
+  }
+ ],
+ "updated": "23 Oct 2026",
+ "live": {
+  "week": 7,
+  "playoffs": false,
+  "updated": "2026-10-23T14:10+10:00",
+  "matchups": [
+   {
+    "a": "TimO",
+    "an": "Run CMC",
+    "as": 0,
+    "ap": 0.37,
+    "aj": 110,
+    "b": "Doug",
+    "bn": "King Henry VIII",
+    "bs": 0,
+    "bp": 0.63,
+    "bj": 127,
+    "final": false
+   },
+   {
+    "a": "Andrew",
+    "an": "No Fourths Given",
+    "as": 0,
+    "ap": 0.32,
+    "aj": 99,
+    "b": "Joe",
+    "bn": "Peter Mahomes",
+    "bs": 24,
+    "bp": 0.68,
+    "bj": 117,
+    "final": false
+   },
+   {
+    "a": "Proud",
+    "an": "TUTEN MY OWN HORN",
+    "as": 21,
+    "ap": 0.49,
+    "aj": 112,
+    "b": "Kingy",
+    "bn": "Purdy Mouth",
+    "bs": 0,
+    "bp": 0.51,
+    "bj": 112,
+    "final": false
+   },
+   {
+    "a": "Mayhew",
+    "an": "Boiling Kittle",
+    "as": 5.5,
+    "ap": 0.4,
+    "aj": 108,
+    "b": "Mr Coin",
+    "bn": "Mr Coin 2.0",
+    "bs": 26.5,
+    "bp": 0.6,
+    "bj": 119,
+    "final": false
+   }
+  ]
+ }
+}

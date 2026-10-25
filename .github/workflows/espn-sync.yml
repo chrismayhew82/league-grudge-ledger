@@ -1,0 +1,42 @@
+name: ESPN sync
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    # All times UTC. Brisbane = UTC+10.
+    - cron: '7 14-23 * * 0'   # Mon 00:07-09:07 AEST  (Sunday games)
+    - cron: '7 0-6 * * 1'     # Mon 10:07-16:07 AEST  (Sunday night game)
+    - cron: '7 0-6 * * 2'     # Tue 10:07-16:07 AEST  (Monday night game)
+    - cron: '7 0-6 * * 5'     # Fri 10:07-16:07 AEST  (Thursday night game)
+    - cron: '49 20 * * 2'     # Wed 06:49 AEST        (weekly results lock-in)
+    - cron: '49 2 * * 3'      # Wed 12:49 AEST        (safety re-run)
+
+permissions:
+  contents: write
+
+concurrency:
+  group: espn-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Pull scores from ESPN
+        id: sync
+        env:
+          ESPN_S2: ${{ secrets.ESPN_S2 }}
+          ESPN_SWID: ${{ secrets.ESPN_SWID }}
+        run: python scripts/sync_espn.py
+      - name: Save changes
+        if: steps.sync.outputs.changed == 'true'
+        run: |
+          git config user.name "grudge-ledger-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/league.json
+          git commit -m "ESPN sync: ${{ steps.sync.outputs.summary }}"
+          git push

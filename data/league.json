@@ -909,18 +909,18 @@
    ]
   }
  ],
- "updated": "26 Oct 2026",
+ "updated": "27 Oct 2026",
  "live": {
   "week": 7,
   "playoffs": false,
-  "updated": "2026-10-26T13:35+10:00",
+  "updated": "2026-10-27T10:45+10:00",
   "matchups": [
    {
     "a": "TimO",
     "an": "Run CMC",
     "as": 84.0,
     "ap": 0.01,
-    "aj": 94,
+    "aj": 93,
     "b": "Doug",
     "bn": "King Henry VIII",
     "bs": 105.0,
@@ -936,22 +936,22 @@
     "aj": 72,
     "b": "Joe",
     "bn": "Peter Mahomes",
-    "bs": 124.0,
+    "bs": 128.0,
     "bp": 0.99,
-    "bj": 138,
+    "bj": 140,
     "final": false
    },
    {
     "a": "Proud",
     "an": "TUTEN MY OWN HORN",
-    "as": 55.5,
+    "as": 61.5,
     "ap": 0.01,
-    "aj": 68,
+    "aj": 72,
     "b": "Kingy",
     "bn": "Purdy Mouth",
-    "bs": 109.5,
+    "bs": 116.0,
     "bp": 0.99,
-    "bj": 124,
+    "bj": 128,
     "final": false
    },
    {
@@ -962,9 +962,9 @@
     "aj": 90,
     "b": "Mr Coin",
     "bn": "Mr Coin 2.0",
-    "bs": 111.0,
+    "bs": 116.0,
     "bp": 0.99,
-    "bj": 126,
+    "bj": 128,
     "final": false
    }
   ]

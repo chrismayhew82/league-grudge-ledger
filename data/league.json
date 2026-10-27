@@ -245,6 +245,38 @@
     "as": 75.0,
     "b": "Mr Coin",
     "bs": 99.5
+   },
+   {
+    "id": "espn7_1_8",
+    "wk": 7,
+    "a": "Mayhew",
+    "as": 90.0,
+    "b": "Mr Coin",
+    "bs": 131.0
+   },
+   {
+    "id": "espn7_3_7",
+    "wk": 7,
+    "a": "Proud",
+    "as": 80.0,
+    "b": "Kingy",
+    "bs": 131.0
+   },
+   {
+    "id": "espn7_4_2",
+    "wk": 7,
+    "a": "Andrew",
+    "as": 71.5,
+    "b": "Joe",
+    "bs": 145.0
+   },
+   {
+    "id": "espn7_6_5",
+    "wk": 7,
+    "a": "TimO",
+    "as": 97.0,
+    "b": "Doug",
+    "bs": 105.0
    }
   ]
  },
@@ -909,62 +941,62 @@
    ]
   }
  ],
- "updated": "27 Oct 2026",
+ "updated": "28 Oct 2026",
  "live": {
-  "week": 7,
+  "week": 8,
   "playoffs": false,
-  "updated": "2026-10-27T13:37+10:00",
+  "updated": "2026-10-28T07:18+10:00",
   "matchups": [
    {
-    "a": "TimO",
-    "an": "Run CMC",
-    "as": 97.0,
-    "ap": 0.0,
-    "aj": 97,
-    "b": "Doug",
-    "bn": "King Henry VIII",
-    "bs": 105.0,
-    "bp": 1.0,
-    "bj": 105,
-    "final": false
-   },
-   {
-    "a": "Andrew",
-    "an": "No Fourths Given",
-    "as": 71.5,
-    "ap": 0.0,
-    "aj": 72,
+    "a": "Doug",
+    "an": "King Henry VIII",
+    "as": 0,
+    "ap": 0.11,
+    "aj": 71,
     "b": "Joe",
     "bn": "Peter Mahomes",
-    "bs": 145.0,
-    "bp": 1.0,
-    "bj": 145,
+    "bs": 0,
+    "bp": 0.89,
+    "bj": 121,
     "final": false
    },
    {
-    "a": "Proud",
-    "an": "TUTEN MY OWN HORN",
-    "as": 80.0,
-    "ap": 0.0,
-    "aj": 80,
-    "b": "Kingy",
-    "bn": "Purdy Mouth",
-    "bs": 131.0,
-    "bp": 1.0,
-    "bj": 131,
+    "a": "Kingy",
+    "an": "Purdy Mouth",
+    "as": 0,
+    "ap": 0.55,
+    "aj": 104,
+    "b": "TimO",
+    "bn": "Run CMC",
+    "bs": 0,
+    "bp": 0.45,
+    "bj": 98,
+    "final": false
+   },
+   {
+    "a": "Mr Coin",
+    "an": "Mr Coin 2.0",
+    "as": 0,
+    "ap": 0.58,
+    "aj": 89,
+    "b": "Andrew",
+    "bn": "No Fourths Given",
+    "bs": 0,
+    "bp": 0.42,
+    "bj": 82,
     "final": false
    },
    {
     "a": "Mayhew",
     "an": "Boiling Kittle",
-    "as": 90.0,
-    "ap": 0.0,
-    "aj": 90,
-    "b": "Mr Coin",
-    "bn": "Mr Coin 2.0",
-    "bs": 131.0,
-    "bp": 1.0,
-    "bj": 131,
+    "as": 0,
+    "ap": 0.5,
+    "aj": 97,
+    "b": "Proud",
+    "bn": "TUTEN MY OWN HORN",
+    "bs": 0,
+    "bp": 0.5,
+    "bj": 97,
     "final": false
    }
   ]

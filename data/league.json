@@ -945,32 +945,32 @@
  "live": {
   "week": 8,
   "playoffs": false,
-  "updated": "2026-10-30T11:55+10:00",
+  "updated": "2026-10-30T12:46+10:00",
   "matchups": [
    {
     "a": "Doug",
     "an": "King Henry VIII",
-    "as": 1.5,
-    "ap": 0.34,
+    "as": 6.0,
+    "ap": 0.33,
     "aj": 112,
     "b": "Joe",
     "bn": "Peter Mahomes",
-    "bs": 11.5,
-    "bp": 0.66,
-    "bj": 131,
+    "bs": 16.5,
+    "bp": 0.67,
+    "bj": 132,
     "final": false
    },
    {
     "a": "Kingy",
     "an": "Purdy Mouth",
     "as": 0,
-    "ap": 0.49,
+    "ap": 0.52,
     "aj": 113,
     "b": "TimO",
     "bn": "Run CMC",
-    "bs": 11.0,
-    "bp": 0.51,
-    "bj": 114,
+    "bs": 11.5,
+    "bp": 0.48,
+    "bj": 111,
     "final": false
    },
    {
@@ -981,7 +981,7 @@
     "aj": 116,
     "b": "Andrew",
     "bn": "No Fourths Given",
-    "bs": 15.0,
+    "bs": 19.0,
     "bp": 0.26,
     "bj": 90,
     "final": false
@@ -989,14 +989,14 @@
    {
     "a": "Mayhew",
     "an": "Boiling Kittle",
-    "as": 23.0,
-    "ap": 0.74,
-    "aj": 133,
+    "as": 31.5,
+    "ap": 0.78,
+    "aj": 135,
     "b": "Proud",
     "bn": "TUTEN MY OWN HORN",
     "bs": 0,
-    "bp": 0.26,
-    "bj": 104,
+    "bp": 0.22,
+    "bj": 100,
     "final": false
    }
   ]

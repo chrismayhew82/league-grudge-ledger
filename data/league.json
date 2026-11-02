@@ -945,14 +945,14 @@
  "live": {
   "week": 8,
   "playoffs": false,
-  "updated": "2026-11-02T12:52+10:00",
+  "updated": "2026-11-02T13:55+10:00",
   "matchups": [
    {
     "a": "Doug",
     "an": "King Henry VIII",
-    "as": 88.0,
+    "as": 92.0,
     "ap": 0.01,
-    "aj": 97,
+    "aj": 100,
     "b": "Joe",
     "bn": "Peter Mahomes",
     "bs": 117.5,
@@ -981,9 +981,9 @@
     "aj": 94,
     "b": "Andrew",
     "bn": "No Fourths Given",
-    "bs": 98.5,
+    "bs": 100.5,
     "bp": 0.97,
-    "bj": 111,
+    "bj": 110,
     "final": false
    },
    {

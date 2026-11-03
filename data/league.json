@@ -277,6 +277,38 @@
     "as": 97.0,
     "b": "Doug",
     "bs": 105.0
+   },
+   {
+    "id": "espn8_1_3",
+    "wk": 8,
+    "a": "Mayhew",
+    "as": 108.5,
+    "b": "Proud",
+    "bs": 99.5
+   },
+   {
+    "id": "espn8_5_2",
+    "wk": 8,
+    "a": "Doug",
+    "as": 103.5,
+    "b": "Joe",
+    "bs": 117.5
+   },
+   {
+    "id": "espn8_7_6",
+    "wk": 8,
+    "a": "Kingy",
+    "as": 118.0,
+    "b": "TimO",
+    "bs": 115.5
+   },
+   {
+    "id": "espn8_8_4",
+    "wk": 8,
+    "a": "Mr Coin",
+    "as": 109.5,
+    "b": "Andrew",
+    "bs": 110.5
    }
   ]
  },
@@ -941,62 +973,62 @@
    ]
   }
  ],
- "updated": "3 Nov 2026",
+ "updated": "4 Nov 2026",
  "live": {
-  "week": 8,
+  "week": 9,
   "playoffs": false,
-  "updated": "2026-11-03T14:55+10:00",
+  "updated": "2026-11-04T06:06+10:00",
   "matchups": [
-   {
-    "a": "Doug",
-    "an": "King Henry VIII",
-    "as": 103.5,
-    "ap": 0.0,
-    "aj": 104,
-    "b": "Joe",
-    "bn": "Peter Mahomes",
-    "bs": 117.5,
-    "bp": 1.0,
-    "bj": 118,
-    "final": false
-   },
    {
     "a": "Kingy",
     "an": "Purdy Mouth",
-    "as": 118.0,
-    "ap": 1.0,
-    "aj": 118,
-    "b": "TimO",
-    "bn": "Run CMC",
-    "bs": 115.5,
-    "bp": 0.0,
-    "bj": 116,
-    "final": false
-   },
-   {
-    "a": "Mr Coin",
-    "an": "Mr Coin 2.0",
-    "as": 109.5,
-    "ap": 0.0,
+    "as": 0,
+    "ap": 0.86,
     "aj": 110,
-    "b": "Andrew",
-    "bn": "No Fourths Given",
-    "bs": 110.5,
-    "bp": 1.0,
-    "bj": 110,
+    "b": "Doug",
+    "bn": "King Henry VIII",
+    "bs": 0,
+    "bp": 0.14,
+    "bj": 68,
     "final": false
    },
    {
-    "a": "Mayhew",
-    "an": "Boiling Kittle",
-    "as": 108.5,
-    "ap": 1.0,
-    "aj": 108,
+    "a": "Joe",
+    "an": "Peter Mahomes",
+    "as": 0,
+    "ap": 0.45,
+    "aj": 107,
+    "b": "Mr Coin",
+    "bn": "Mr Coin 2.0",
+    "bs": 0,
+    "bp": 0.55,
+    "bj": 113,
+    "final": false
+   },
+   {
+    "a": "TimO",
+    "an": "Run CMC",
+    "as": 0,
+    "ap": 0.41,
+    "aj": 100,
+    "b": "Mayhew",
+    "bn": "Boiling Kittle",
+    "bs": 0,
+    "bp": 0.59,
+    "bj": 112,
+    "final": false
+   },
+   {
+    "a": "Andrew",
+    "an": "No Fourths Given",
+    "as": 0,
+    "ap": 0.65,
+    "aj": 110,
     "b": "Proud",
     "bn": "TUTEN MY OWN HORN",
-    "bs": 99.5,
-    "bp": 0.0,
-    "bj": 100,
+    "bs": 0,
+    "bp": 0.35,
+    "bj": 93,
     "final": false
    }
   ]

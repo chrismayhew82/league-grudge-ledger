@@ -977,7 +977,7 @@
  "live": {
   "week": 9,
   "playoffs": false,
-  "updated": "2026-11-04T06:06+10:00",
+  "updated": "2026-11-04T13:32+10:00",
   "matchups": [
    {
     "a": "Kingy",
@@ -996,12 +996,12 @@
     "a": "Joe",
     "an": "Peter Mahomes",
     "as": 0,
-    "ap": 0.45,
-    "aj": 107,
+    "ap": 0.37,
+    "aj": 99,
     "b": "Mr Coin",
     "bn": "Mr Coin 2.0",
     "bs": 0,
-    "bp": 0.55,
+    "bp": 0.63,
     "bj": 113,
     "final": false
    },

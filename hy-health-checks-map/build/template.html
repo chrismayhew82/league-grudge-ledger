@@ -53,6 +53,9 @@ body.render #controls{display:none}
 <script>
 const LOGO='data:image/png;base64,__LOGO__';
 const PHOTOS=__PHOTOS__;
+const CREDITS={cairns:'Image: Hansen Yuncken',uq:'Render: Hansen Yuncken',uon:'Render: Hansen Yuncken',liverpool:'Render: Hansen Yuncken',
+  medowie:'Artist impression: NSW Government',cessnock:'Concept: Health Infrastructure NSW',warrnambool:'Render: The Standard / VHBA',
+  firmus:'Image: Firmus',anipdf:'Image: Australian Naval Infrastructure',anistack:'Image: Australian Naval Infrastructure'};
 const W=1920,H=1080, NS='http://www.w3.org/2000/svg';
 const G=window.GEO, P=G.P, N=P.length;
 const $=id=>document.getElementById(id);
@@ -149,8 +152,10 @@ function buildCard(i){
   el('rect',{x:0,y:0,width:560,height:315,fill:'#FEF1DC'},ph);
   if(PHOTOS[p.id]){
     const pg=el('g',{'clip-path':'url(#photoclip)'},ph);
-    el('rect',{x:0,y:0,width:560,height:315,fill:'#FAAF3F'},pg);
-    el('image',{href:PHOTOS[p.id],x:0,y:0,width:560,height:315,preserveAspectRatio:'xMidYMid slice',filter:'url(#bw)',style:'mix-blend-mode:multiply'},pg);
+    el('image',{href:PHOTOS[p.id],x:0,y:0,width:560,height:315,preserveAspectRatio:'xMidYMid slice'},pg);
+    const cr=CREDITS[p.id]; if(cr){const cw=cr.length*6.3+16;
+      el('rect',{x:560-cw,y:293,width:cw,height:22,fill:'#000',opacity:.6},pg);
+      el('text',{x:552,y:308,'text-anchor':'end','font-size':12,fill:'#fff'},pg,cr);}
   }else{
     el('rect',{x:0,y:0,width:560,height:315,fill:'url(#ydots)'},ph);
     el('rect',{x:190,y:68,width:180,height:180,fill:'#fff'},ph);

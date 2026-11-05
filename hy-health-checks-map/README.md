@@ -6,9 +6,16 @@ Animated map video of the 10 projects that had project health checks in 2026, in
 - `hy-health-checks-map.html`: an interactive version. Open it in a browser. Click a pin or a progress square to jump to that project.
 
 ## Status
-**Photos are still missing.** The cloud session that built this couldn't download images because its network settings blocked the sites. Each card shows a drawn icon until a photo is added.
+All 10 project images are in `photos/`. They're full colour, cropped to 16:9, and each card shows a small credit. They were taken from:
+- Hansen Yuncken project pages: Cairns, UQ HARP, UoN, Liverpool
+- NSW Government / Health Infrastructure NSW: Medowie, Cessnock
+- The Standard (VHBA render): Warrnambool
+- Firmus (Southgate page): Launceston
+- Australian Naval Infrastructure: ANI PDF and ANI STAC. Neither project has a public photo, so these are general Osborne yard aerials.
 
-## Adding photos
+Copyright: HY's own images are fine to use. Before showing the video outside HY, check permission for the government, news, Firmus and ANI images, or replace them with HY site photos.
+
+## Replacing photos
 Save one landscape image per project into `photos/`, named by project id (`.jpg`, `.png` or `.webp`):
 
 | id | Project | Likely source |
@@ -22,7 +29,7 @@ Save one landscape image per project into `photos/`, named by project id (`.jpg`
 | firmus | Firmus Southgate Project | firmus.co |
 | warrnambool | Warrnambool Base Hospital Redevelopment | vhba.vic.gov.au/health/hospitals/warrnambool-base-hospital-redevelopment |
 | anipdf | ANI Production Demonstration Facilities | ani.com.au / asa.gov.au (Osborne yard) |
-| anistack | ANI STAC Project | ani.com.au (Osborne) |
+| anistack (ANI STAC) | ANI STAC Project | ani.com.au (Osborne) |
 
 Photos get the HY treatment automatically: black and white, multiplied over HY yellow.
 

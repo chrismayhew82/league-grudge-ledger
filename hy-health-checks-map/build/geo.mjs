@@ -31,7 +31,7 @@ const P=[
  {id:'firmus',name:'Firmus Southgate Project',city:'Launceston',state:'TAS',sector:'Data Centre',client:'Firmus',icon:'data',ll:[147.180,-41.468]},
  {id:'warrnambool',name:'Warrnambool Base Hospital Redevelopment',city:'Warrnambool',state:'VIC',sector:'Health',client:'Victorian Health Building Authority',icon:'health',ll:[142.484,-38.379]},
  {id:'anipdf',name:'ANI Production Demonstration Facilities (PDF)',city:'Osborne, Adelaide',state:'SA',sector:'Defence',client:'Australian Naval Infrastructure',icon:'naval',ll:[138.497,-34.796]},
- {id:'anistack',name:'ANI STAC Project',city:'Osborne, Adelaide',state:'SA',sector:'Defence',client:'Australian Naval Infrastructure',icon:'naval',ll:[138.535,-34.770]},
+ {id:'anistack',name:'ANI Skills and Training Academy (STAC)',city:'Osborne, Adelaide',state:'SA',sector:'Defence',client:'Australian Naval Infrastructure',icon:'naval',ll:[138.535,-34.770]},
 ];
 P.forEach(p=>{const [x,y]=proj(p.ll);p.x=+x.toFixed(2);p.y=+y.toFixed(2);});
 const EB=[proj([128.6,-10.9]),proj([154.0,-43.7])];

@@ -2,7 +2,7 @@
 
 Animated map video of the 10 projects that had project health checks in 2026, in Hansen Yuncken branding.
 
-- `hy-health-checks-2026.mp4`: the current render (1080p, 30 fps, about 66 s).
+- `hy-health-checks-2026.mp4`: the current render (1080p, 30 fps, about 45 s).
 - `hy-health-checks-map.html`: an interactive version. Open it in a browser. Click a pin or a progress square to jump to that project.
 
 ## Status
@@ -29,7 +29,7 @@ Save one landscape image per project into `photos/`, named by project id (`.jpg`
 | firmus | Firmus Southgate Project | firmus.co |
 | warrnambool | Warrnambool Base Hospital Redevelopment | vhba.vic.gov.au/health/hospitals/warrnambool-base-hospital-redevelopment |
 | anipdf | ANI Production Demonstration Facilities | ani.com.au / asa.gov.au (Osborne yard) |
-| anistack (ANI STAC) | ANI STAC Project | ani.com.au (Osborne) |
+| anistack | ANI Skills and Training Academy (STAC) | ani.com.au (Osborne) |
 
 Photos get the HY treatment automatically: black and white, multiplied over HY yellow.
 

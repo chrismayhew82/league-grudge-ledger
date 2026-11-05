@@ -41,6 +41,7 @@ body.render #controls{display:none}
   <g id="leader"></g>
   <!-- left panel -->
   <rect id="panelBg" x="0" y="0" width="900" height="1080" fill="url(#fadeL)" opacity="0"/>
+  <g id="benefits"></g>
   <g id="header"></g>
   <g id="card"></g>
   <g id="progress"></g>
@@ -74,15 +75,16 @@ function clear(g){while(g.firstChild)g.removeChild(g.firstChild);}
 function wrap(text,max){const w=text.split(' ');const lines=[];let cur='';for(const x of w){if((cur+' '+x).trim().length>max&&cur){lines.push(cur);cur=x;}else cur=(cur+' '+x).trim();}if(cur)lines.push(cur);return lines;}
 
 // ---------- timeline
-const T_INTRO=3.4, T_MAP=2.4, DWELL=2.8, T_FIN=8.5;
-const S0=T_INTRO+T_MAP;
+const T_INTRO=2.6, BEN=5.6, DWELL=1.65, T_FIN=4.8;
+const S0=T_INTRO+BEN;
 const FX=1290, FY=560;
-const CAMZ={cairns:3.0,uq:3.2,medowie:13,uon:13,cessnock:13,liverpool:7,firmus:4.2,warrnambool:4.2,anipdf:20,anistack:20};
+const CAMZ={cairns:3.0,uq:3.2,medowie:13,uon:13,cessnock:13,liverpool:7,firmus:4.2,warrnambool:4.2,anipdf:28,anistack:28};
 const cl=(ids)=>{const s=ids.map(i=>P.find(p=>p.id===i));return[s.reduce((a,p)=>a+p.x,0)/s.length,s.reduce((a,p)=>a+p.y,0)/s.length];};
 const NEWC=cl(['medowie','uon','cessnock']), ADL=cl(['anipdf','anistack']);
 const FOCUS={medowie:NEWC,uon:NEWC,cessnock:NEWC,anipdf:ADL,anistack:ADL};
 const cams=P.map(p=>{const f=FOCUS[p.id]||[p.x,p.y];return{cx:f[0],cy:f[1],z:CAMZ[p.id],fx:FX,fy:FY};});
 const OV={cx:W/2,cy:H/2,z:1,fx:W/2,fy:H/2};
+const OVB={cx:W/2+40,cy:H/2,z:0.86,fx:W/2+185,fy:H/2}; // slow push-in during benefits
 // finale: frame QLD, NSW, VIC, TAS, SA (eastern states) to the right of the list panel
 const EB=G.EB, RX0=700, RX1=1890, RY0=8, RY1=1072;
 const ebw=EB[1][0]-EB[0][0], ebh=EB[1][1]-EB[0][1];
@@ -99,15 +101,15 @@ function zoomPath(a,b){
 const esine=t=>-(Math.cos(Math.PI*t)-1)/2;
 function flight(a,b){const zp=zoomPath(a,b);
   // duration grows with path length: short hops ~1.6s, long hops up to ~4.4s
-  const dur=zp.S<0.05?0.8:clamp(2.0+zp.S*1.1,2.4,4.8);
+  const dur=zp.S<0.05?0.6:clamp(1.3+zp.S*0.7,1.5,2.4);
   return{dur,at:t=>{const e=esine(clamp(t));const[cx,cy,w]=zp.f(e);return{cx,cy,z:W/w,fx:lerp(a.fx,b.fx,e),fy:lerp(a.fy,b.fy,e)};}};}
 const FL=[],ST=[];let acc=S0;
-for(let i=0;i<N;i++){const fl=flight(i===0?OV:cams[i-1],cams[i]);FL.push(fl);ST.push(acc);acc+=fl.dur+DWELL;}
-const FIN=flight(cams[N-1],OVF); FIN.dur=Math.max(FIN.dur,3.2);
+for(let i=0;i<N;i++){const fl=flight(i===0?OVB:cams[i-1],cams[i]);FL.push(fl);ST.push(acc);acc+=fl.dur+DWELL;}
+const FIN=flight(cams[N-1],OVF); FIN.dur=clamp(FIN.dur,2.0,2.4);
 const TEND=acc, TOTAL=TEND+T_FIN;
 function stopAt(t){if(t<S0)return{i:-1};for(let i=N-1;i>=0;i--)if(t>=ST[i])return t<ST[i]+FL[i].dur+DWELL?{i,e:t-ST[i],F:FL[i].dur}:{i:N};return{i:-1};}
 function camera(t){
-  if(t<S0) return OV;
+  if(t<S0){const k=esine(seg(t,T_INTRO-0.2,T_INTRO+1.4));return{cx:lerp(OV.cx,OVB.cx,k),cy:OV.cy,z:lerp(1,OVB.z,k),fx:lerp(OV.fx,OVB.fx,k),fy:OV.fy};}
   const s=stopAt(t);
   if(s.i<N) return FL[s.i].at(s.e/s.F);
   return FIN.at((t-TEND)/FIN.dur);
@@ -176,9 +178,9 @@ function buildCard(i){
 }
 
 // ---------- intro
-function drawIntro(t){const g=$('intro');clear(g);
-  if(t>T_INTRO+0.7) return;
-  const out=seg(t,T_INTRO-0.2,T_INTRO+0.7);
+function drawIntro(t){t=t*3.4/T_INTRO;const TI=3.4;const g=$('intro');clear(g);
+  if(t>TI+0.7) return;
+  const out=seg(t,TI-0.2,TI+0.7);
   const a=1-eout(out);
   el('rect',{x:0,y:0,width:W,height:H,fill:'#fff',opacity:a},g);
   el('rect',{x:0,y:0,width:W,height:H,fill:'url(#dots)',opacity:a},g);
@@ -201,6 +203,36 @@ function drawIntro(t){const g=$('intro');clear(g);
   });
 }
 
+
+// black circle with white 'HY' (location marker)
+function hyMark(g,x,y,r,j){if(r<=0.3)return;
+  el('circle',{cx:x,cy:y,r:r,fill:'#000',stroke:'#fff','stroke-width':Math.max(1.5,r*0.1),class:'hit','data-i':j},g);
+  el('text',{x:x,y:y+r*0.29,'text-anchor':'middle','font-size':r*0.82,'font-weight':700,fill:'#fff','letter-spacing':'-.02em','pointer-events':'none'},g,'HY');
+}
+// benefits screen over the map
+const BENEFITS=[
+ ['Earlier Risk & Opportunity Insight','Issues surfaced early, upside captured'],
+ ['Independent Strategic Support','Senior, objective eyes on delivery'],
+ ['Financial & Contractual Confidence','Commercial and legal positions tested'],
+ ['Programme Certainty','A clear, credible path to completion'],
+ ['Shared Lessons, Stronger Delivery','Insights carried across our national portfolio'],
+];
+function drawBenefits(t){const g=$('benefits');clear(g);
+  const b=t-T_INTRO; if(b<0||t>S0+0.1) return;
+  const out=1-eout(seg(t,S0-0.7,S0-0.1));
+  const ta=eout(seg(b,0.2,0.8))*out;
+  el('image',{href:LOGO,x:PX,y:150,width:240,height:240*153/1034,opacity:ta},g);
+  el('text',{x:PX,y:250,'font-size':46,'font-weight':700,class:'u',opacity:ta},g,'Why Project Health Checks');
+  el('rect',{x:PX,y:272,width:56*ta,height:6,fill:'#FAAF3F',opacity:ta},g);
+  BENEFITS.forEach((it,k)=>{const a=eout(seg(b,0.7+k*0.5,1.3+k*0.5))*out;if(a<=0)return;
+    const y=340+k*118, dx=24*(1-a);
+    el('rect',{x:PX+dx,y:y,width:64,height:64,fill:'#FAAF3F',opacity:a},g);
+    el('text',{x:PX+32+dx,y:y+44,'text-anchor':'middle','font-size':30,'font-weight':700,opacity:a},g,String(k+1).padStart(2,'0'));
+    el('text',{x:PX+90+dx,y:y+28,'font-size':31,'font-weight':700,class:'u',opacity:a},g,it[0]);
+    el('text',{x:PX+90+dx,y:y+60,'font-size':22,fill:'#6E7073',opacity:a},g,it[1]);
+  });
+}
+
 // ---------- per-frame render
 function render(t){
   const c=camera(t);
@@ -211,17 +243,18 @@ function render(t){
   $('borders').setAttribute('opacity',eout(seg(t,T_INTRO+0.8,T_INTRO+2.2)));
   $('cam').setAttribute('style',`transform-box:view-box`);
   // header
-  const ha=eout(seg(t,T_INTRO+0.4,T_INTRO+1.4));
+  const ha=eout(seg(t,S0-0.5,S0+0.3));
   $('header').setAttribute('opacity',ha*(1-eout(seg(t,TEND+0.05,TEND+0.55))));
   // left panel soft white backing when zoomed
-  $('panelBg').setAttribute('opacity',ha);
+  $('panelBg').setAttribute('opacity',eout(seg(t,T_INTRO,T_INTRO+0.8)));
+  drawBenefits(t);
   // current stop
   const st=stopAt(t); const i=st.i, e=st.e, F=st.F;
   const inTour=t>=S0&&i>=0&&i<N;
   // markers + route (screen space)
   const mg=$('markers'),rg=$('route'),lg=$('leader');clear(mg);clear(rg);clear(lg);
   const fin=t-TEND;
-  const visited=t<S0?0:(inTour?i+(e>=F-0.15?1:0):N);
+  const visited=t<S0?0:(inTour?i+(e>=F-0.3?1:0):N);
   // route
   for(let j=1;j<visited;j++){
     const a=toScreen(c,P[j-1].x,P[j-1].y),b=toScreen(c,P[j].x,P[j].y);
@@ -232,22 +265,17 @@ function render(t){
   for(let j=0;j<visited;j++){
     const p=P[j];const [x,y]=toScreen(c,p.x,p.y);
     const cur=inTour&&j===i;
-    let s=1; if(cur) s=back(clamp(seg(e,F-0.15,F+0.3)));
+    let s=1; if(cur) s=back(clamp(seg(e,F-0.3,F+0.1)));
     const big=cur?1:(fin>0?0.85:0.62);
     const sz=26*big*s;
     if(cur){ // pulses
-      for(let r=0;r<2;r++){const pt=((e-F-0.15)*0.55+r*0.5)%1; if(e>F+0.15){el('rect',{x:x-(13+pt*44),y:y-(13+pt*44),width:26+pt*88,height:26+pt*88,fill:'none',stroke:'#FAAF3F','stroke-width':3,opacity:(1-pt)*0.9},mg);}}
-      // drop shadow & pin stem
-      el('line',{x1:x,y1:y,x2:x,y2:y-60*s,stroke:'#000','stroke-width':3},mg);
-      el('rect',{x:x-sz/2,y:y-60*s-sz/2,width:sz,height:sz,fill:'#FAAF3F',stroke:'#000','stroke-width':3},mg);
-      el('rect',{x:x-5,y:y-5,width:10,height:10,fill:'#000'},mg);
-    }else{
-      el('rect',{x:x-sz/2,y:y-sz/2,width:sz,height:sz,fill:'#FAAF3F',stroke:'#000','stroke-width':2,class:'hit','data-i':j},mg);
+      for(let r=0;r<2;r++){const pt=((e-F-0.1)*0.7+r*0.5)%1; if(e>F-0.1){el('circle',{cx:x,cy:y,r:22+pt*48,fill:'none',stroke:'#FAAF3F','stroke-width':3,opacity:(1-pt)*0.9},mg);}}
     }
+    hyMark(mg,x,y,(cur?22:(fin>0?14:12))*s,j);
   }
   // finale numbering on map
   if(fin>0){
-    const fa=eout(seg(fin,1.4,2.2));
+    const fa=eout(seg(fin,1.1,1.7));
     const groups=[['cairns'],['uq'],['medowie','uon','cessnock','liverpool'],['firmus'],['warrnambool'],['anipdf','anistack']];
     const offs={cairns:[40,0],uq:[40,0],medowie:[-90,60],firmus:[40,10],warrnambool:[-40,40],anipdf:[-40,-40]};
     groups.forEach(gp=>{const p0=P.find(p=>p.id===gp[0]);const [x,y]=toScreen(c,p0.x,p0.y);const o=offs[gp[0]];
@@ -260,7 +288,7 @@ function render(t){
   // card
   const cg=$('card');clear(cg);
   if(inTour){
-    const ci=seg(e,F+0.05,F+0.65), co=seg(e,F+DWELL-0.4,F+DWELL);
+    const ci=seg(e,F-0.25,F+0.3), co=seg(e,F+DWELL-0.3,F+DWELL);
     const a=eout(ci)*(1-eout(co));
     if(a>0.001){
       if(!cardCache[i])cardCache[i]=buildCard(i);
@@ -270,8 +298,8 @@ function render(t){
       // leader line from card to marker
       const [mx,my]=toScreen(c,P[i].x,P[i].y);
       const sx=PX+560, sy=300+34+157;
-      const lp=eout(seg(e,F+0.4,F+0.95))*(1-eout(co));
-      if(lp>0){const ex=lerp(sx,mx,lp),ey=lerp(sy,my-60,lp);
+      const lp=eout(seg(e,F+0.05,F+0.45))*(1-eout(co));
+      if(lp>0){const ex=lerp(sx,mx-24,lp),ey=lerp(sy,my,lp);
         el('line',{x1:sx,y1:sy,x2:ex,y2:ey,stroke:'#000','stroke-width':1.5,opacity:a},lg);
         el('rect',{x:sx-5,y:sy-5,width:10,height:10,fill:'#000',opacity:a},lg);}
     }
@@ -284,18 +312,18 @@ function render(t){
   // finale panel
   const fg=$('finale');clear(fg);
   if(fin>0){
-    const fa=eout(seg(fin,0.8,1.8));
+    const fa=eout(seg(fin,0.5,1.2));
     el('image',{href:LOGO,x:PX,y:70,width:300,height:300*153/1034,opacity:fa},fg);
     el('text',{x:PX,y:170,'font-size':44,'font-weight':700,class:'u',opacity:fa},fg,'Project Health Checks');
     el('text',{x:PX,y:214,'font-size':26,'font-weight':700,fill:'#898B8E',class:'u','letter-spacing':'.2em',opacity:fa},fg,'2026 · 10 projects · 5 states');
     el('rect',{x:PX,y:238,width:56,height:6,fill:'#FAAF3F',opacity:fa},fg);
-    P.forEach((p,j)=>{const la=eout(seg(fin,1.4+j*0.12,1.9+j*0.12));const y=300+j*62;
+    P.forEach((p,j)=>{const la=eout(seg(fin,0.8+j*0.08,1.2+j*0.08));const y=300+j*62;
       el('rect',{x:PX-20*(1-la),y:y,width:44,height:44,fill:'#FAAF3F',opacity:la},fg);
       el('text',{x:PX+22-20*(1-la),y:y+31,'text-anchor':'middle','font-size':22,'font-weight':700,opacity:la},fg,String(j+1).padStart(2,'0'));
       el('text',{x:PX+62-20*(1-la),y:y+22,'font-size':22,'font-weight':700,opacity:la},fg,p.name);
       el('text',{x:PX+62-20*(1-la),y:y+44,'font-size':17,fill:'#898B8E',opacity:la},fg,p.city+' · '+p.state);
     });
-    const ta=eout(seg(fin,3.6,4.6));
+    const ta=eout(seg(fin,2.2,2.9));
     el('rect',{x:0,y:H-20,width:W*ta,height:20,fill:'#FAAF3F'},fg);
     el('text',{x:PX,y:H-60,'font-size':28,'font-weight':700,class:'u',opacity:ta},fg,'Driven by challenge, built with pride.');
   }
@@ -316,7 +344,7 @@ $('play').onclick=()=>{if(!playing&&tNow>=TOTAL)setT(0);playing=!playing;t0=perf
 $('replay').onclick=()=>{setT(0);playing=true;$('play').textContent='Pause';};
 $('scrub').oninput=e=>{setT(e.target.value/1000*TOTAL);};
 // click a marker or progress square to jump to that project
-$('stage').addEventListener('click',e=>{const d=e.target.getAttribute&&e.target.getAttribute('data-i');if(d!=null){setT(ST[+d]+FL[+d].dur+1.2);playing=false;$('play').textContent='Play';}});
+$('stage').addEventListener('click',e=>{const d=e.target.getAttribute&&e.target.getAttribute('data-i');if(d!=null){setT(ST[+d]+FL[+d].dur+0.8);playing=false;$('play').textContent='Play';}});
 if(isRender) render(0); else {setT(0);requestAnimationFrame(loop);}
 </script>
 </body>

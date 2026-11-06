@@ -973,62 +973,62 @@
    ]
   }
  ],
- "updated": "4 Nov 2026",
+ "updated": "6 Nov 2026",
  "live": {
   "week": 9,
   "playoffs": false,
-  "updated": "2026-11-04T13:32+10:00",
+  "updated": "2026-11-06T10:59+10:00",
   "matchups": [
    {
     "a": "Kingy",
     "an": "Purdy Mouth",
     "as": 0,
-    "ap": 0.86,
-    "aj": 110,
+    "ap": 0.49,
+    "aj": 112,
     "b": "Doug",
     "bn": "King Henry VIII",
     "bs": 0,
-    "bp": 0.14,
-    "bj": 68,
+    "bp": 0.51,
+    "bj": 114,
     "final": false
    },
    {
     "a": "Joe",
     "an": "Peter Mahomes",
     "as": 0,
-    "ap": 0.37,
-    "aj": 99,
+    "ap": 0.53,
+    "aj": 121,
     "b": "Mr Coin",
     "bn": "Mr Coin 2.0",
     "bs": 0,
-    "bp": 0.63,
-    "bj": 113,
+    "bp": 0.47,
+    "bj": 118,
     "final": false
    },
    {
     "a": "TimO",
     "an": "Run CMC",
     "as": 0,
-    "ap": 0.41,
+    "ap": 0.4,
     "aj": 100,
     "b": "Mayhew",
     "bn": "Boiling Kittle",
     "bs": 0,
-    "bp": 0.59,
-    "bj": 112,
+    "bp": 0.6,
+    "bj": 114,
     "final": false
    },
    {
     "a": "Andrew",
     "an": "No Fourths Given",
     "as": 0,
-    "ap": 0.65,
+    "ap": 0.52,
     "aj": 110,
     "b": "Proud",
     "bn": "TUTEN MY OWN HORN",
     "bs": 0,
-    "bp": 0.35,
-    "bj": 93,
+    "bp": 0.48,
+    "bj": 107,
     "final": false
    }
   ]

@@ -977,18 +977,18 @@
  "live": {
   "week": 9,
   "playoffs": false,
-  "updated": "2026-11-09T01:33+10:00",
+  "updated": "2026-11-09T02:37+10:00",
   "matchups": [
    {
     "a": "Kingy",
     "an": "Purdy Mouth",
-    "as": 16.0,
-    "ap": 0.63,
-    "aj": 121,
+    "as": 23.0,
+    "ap": 0.65,
+    "aj": 123,
     "b": "Doug",
     "bn": "King Henry VIII",
     "bs": 5.0,
-    "bp": 0.37,
+    "bp": 0.35,
     "bj": 106,
     "final": false
    },
@@ -1008,27 +1008,27 @@
    {
     "a": "TimO",
     "an": "Run CMC",
-    "as": 5.0,
-    "ap": 0.4,
+    "as": 12.0,
+    "ap": 0.3,
     "aj": 106,
     "b": "Mayhew",
     "bn": "Boiling Kittle",
-    "bs": 18.5,
-    "bp": 0.6,
-    "bj": 118,
+    "bs": 34.0,
+    "bp": 0.7,
+    "bj": 129,
     "final": false
    },
    {
     "a": "Andrew",
     "an": "No Fourths Given",
-    "as": 33.0,
-    "ap": 0.75,
-    "aj": 131,
+    "as": 37.0,
+    "ap": 0.76,
+    "aj": 130,
     "b": "Proud",
     "bn": "TUTEN MY OWN HORN",
-    "bs": 14.0,
-    "bp": 0.25,
-    "bj": 104,
+    "bs": 12.0,
+    "bp": 0.24,
+    "bj": 103,
     "final": false
    }
   ]

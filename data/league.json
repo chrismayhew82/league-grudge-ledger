@@ -309,6 +309,30 @@
     "as": 109.5,
     "b": "Andrew",
     "bs": 110.5
+   },
+   {
+    "id": "espn9_2_8",
+    "wk": 9,
+    "a": "Joe",
+    "as": 116.5,
+    "b": "Mr Coin",
+    "bs": 86.5
+   },
+   {
+    "id": "espn9_4_3",
+    "wk": 9,
+    "a": "Andrew",
+    "as": 125.0,
+    "b": "Proud",
+    "bs": 76.5
+   },
+   {
+    "id": "espn9_7_5",
+    "wk": 9,
+    "a": "Kingy",
+    "as": 133.0,
+    "b": "Doug",
+    "bs": 102.0
    }
   ]
  },
@@ -973,62 +997,62 @@
    ]
   }
  ],
- "updated": "10 Nov 2026",
+ "updated": "11 Nov 2026",
  "live": {
-  "week": 9,
+  "week": 10,
   "playoffs": false,
-  "updated": "2026-11-10T14:54+10:00",
+  "updated": "2026-11-11T07:24+10:00",
   "matchups": [
    {
-    "a": "Kingy",
-    "an": "Purdy Mouth",
-    "as": 133.0,
-    "ap": 1.0,
-    "aj": 133,
-    "b": "Doug",
-    "bn": "King Henry VIII",
-    "bs": 102.0,
-    "bp": 0.0,
-    "bj": 102,
-    "final": false
-   },
-   {
-    "a": "Joe",
-    "an": "Peter Mahomes",
-    "as": 116.5,
-    "ap": 1.0,
-    "aj": 116,
+    "a": "Doug",
+    "an": "King Henry VIII",
+    "as": 0,
+    "ap": 0.49,
+    "aj": 98,
     "b": "Mr Coin",
     "bn": "Mr Coin 2.0",
-    "bs": 86.5,
-    "bp": 0.0,
-    "bj": 86,
+    "bs": 0,
+    "bp": 0.51,
+    "bj": 99,
     "final": false
    },
    {
-    "a": "TimO",
-    "an": "Run CMC",
-    "as": 115.0,
-    "ap": 1.0,
-    "aj": 115,
-    "b": "Mayhew",
-    "bn": "Boiling Kittle",
-    "bs": 115.0,
-    "bp": 0.0,
-    "bj": 115,
+    "a": "Mayhew",
+    "an": "Boiling Kittle",
+    "as": 0,
+    "ap": 0.45,
+    "aj": 99,
+    "b": "Kingy",
+    "bn": "Purdy Mouth",
+    "bs": 0,
+    "bp": 0.55,
+    "bj": 104,
+    "final": false
+   },
+   {
+    "a": "Proud",
+    "an": "TUTEN MY OWN HORN",
+    "as": 0,
+    "ap": 0.33,
+    "aj": 87,
+    "b": "Joe",
+    "bn": "Peter Mahomes",
+    "bs": 0,
+    "bp": 0.67,
+    "bj": 106,
     "final": false
    },
    {
     "a": "Andrew",
     "an": "No Fourths Given",
-    "as": 125.0,
-    "ap": 1.0,
-    "aj": 125,
-    "b": "Proud",
-    "bn": "TUTEN MY OWN HORN",
-    "bs": 76.5,
-    "bp": 0.0,
-    "bj": 76,
+    "as": 0,
+    "ap": 0.27,
+    "aj": 84,
+    "b": "TimO",
+    "bn": "Run CMC",
+    "bs": 0,
+    "bp": 0.73,
+    "bj": 112,
     "final": false
    }
   ]

@@ -64,6 +64,10 @@ def main():
                 games.append(g); idx[key] = g; added.append(f'W{wk} {A} {hp} - {ap} {B}')
             else:
                 sc = {A: round(hp, 2), B: round(ap, 2)}; g['as'], g['bs'] = sc[g['a']], sc[g['b']]
+            # tied score: ESPN's tiebreak decides the winner
+            win = {'HOME': A, 'AWAY': B}.get(m.get('winner'))
+            if g['as'] == g['bs'] and win: g['w'] = win
+            else: g.pop('w', None)
         if wk == cur:
             H, W = m['home'], m['away']
             live.append({'a': A, 'an': names.get(h, ''), 'as': round(H.get('totalPointsLive', hp) or 0, 2),

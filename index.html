@@ -235,7 +235,7 @@ function finishLabel(f,n){if(f===1)return'Champ';if(f===2)return'Runner-up';if(f
 function currentTable(){
   var c=S.current, t={};
   Object.keys(c.baseline).forEach(function(k){var b=c.baseline[k];t[k]={team:k,w:b.w,l:b.l,t:b.t||0,pf:b.pf,pa:b.pa};});
-  c.games.forEach(function(g){var A=t[g.a],B=t[g.b];if(!A||!B)return;A.pf+=g.as;A.pa+=g.bs;B.pf+=g.bs;B.pa+=g.as;if(g.as>g.bs){A.w++;B.l++;}else if(g.bs>g.as){B.w++;A.l++;}else{A.t++;B.t++;}});
+  c.games.forEach(function(g){var A=t[g.a],B=t[g.b];if(!A||!B)return;A.pf+=g.as;A.pa+=g.bs;B.pf+=g.bs;B.pa+=g.as;if(g.as>g.bs){A.w++;B.l++;}else if(g.bs>g.as){B.w++;A.l++;}else if(g.w===g.a){A.w++;B.l++;}else if(g.w===g.b){B.w++;A.l++;}else{A.t++;B.t++;}});
   var rows=Object.keys(t).map(function(k){var r=t[k];r.pf=round2(r.pf);r.pa=round2(r.pa);return r;});
   rows.sort(function(a,b){return (b.w+(b.t||0)/2)-(a.w+(a.t||0)/2)||b.pf-a.pf;});
   decorate(rows);return rows;
@@ -382,9 +382,9 @@ function renderLog(){
   if(!games.length){wrap.appendChild(el('div',{class:'empty',text:'Weeks 1–'+S.current.baselineWeek+' are carried over as totals from the spreadsheet. Logged weeks from here on will show each result.'}));return wrap;}
   var list=el('div',{class:'log'});
   games.forEach(function(g){
-    var aw=g.as>g.bs,tie=g.as===g.bs;
+    var aw=g.as>g.bs||(g.as===g.bs&&g.w===g.a),tie=g.as===g.bs&&!g.w;
     var res=el('div',{class:'res'},[el(aw||tie?'b':'span',{class:aw||tie?null:'lo',text:g.a+' '+fmt(g.as,2)}),' – ',el(!aw||tie?'b':'span',{class:!aw||tie?null:'lo',text:fmt(g.bs,2)+' '+g.b}),
-      el('span',{class:'lo',text:tie?'  · tie (kiss your sister)':'  · margin '+fmt(Math.abs(g.as-g.bs),2)+(Math.abs(g.as-g.bs)<3?' (heartbreaker)':Math.abs(g.as-g.bs)>40?' (call the mercy rule)':'')})]);
+      el('span',{class:'lo',text:tie?'  · tie (kiss your sister)':g.w?'  · dead level, '+g.w+' wins the tiebreak. Robbery.':'  · margin '+fmt(Math.abs(g.as-g.bs),2)+(Math.abs(g.as-g.bs)<3?' (heartbreaker)':Math.abs(g.as-g.bs)>40?' (call the mercy rule)':'')})]);
     var kids=[el('div',{class:'wk',text:'WK '+g.wk}),res];
     if(canWrite)kids.push(delBtn(g.id));
     list.appendChild(el('div',{class:'game'},kids));

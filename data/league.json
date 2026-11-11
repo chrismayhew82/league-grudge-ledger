@@ -332,7 +332,8 @@
     "a": "TimO",
     "as": 115.0,
     "b": "Mayhew",
-    "bs": 115.0
+    "bs": 115.0,
+    "w": "Mayhew"
    },
    {
     "id": "espn9_7_5",
@@ -1009,7 +1010,7 @@
  "live": {
   "week": 10,
   "playoffs": false,
-  "updated": "2026-11-11T20:04+10:00",
+  "updated": "2026-11-11T20:05+10:00",
   "matchups": [
    {
     "a": "Doug",

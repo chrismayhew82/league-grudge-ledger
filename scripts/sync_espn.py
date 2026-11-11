@@ -65,6 +65,10 @@ def main():
             else:
                 sc = {A: round(hp, 2), B: round(ap, 2)}; g['as'], g['bs'] = sc[g['a']], sc[g['b']]
             # tied score: ESPN's tiebreak decides the winner
+            if hp == ap:
+                import sys as _s
+                _s.stderr.write('TIE DEBUG %s %s\n' % (m.get('winner'), {k: v for k, v in m.items() if k not in ('home', 'away')}))
+                _s.stderr.write('TIE TEAMS %s\n' % [(t['id'], t.get('record', {}).get('overall')) for t in st['teams'] if t['id'] in (h, a)])
             win = {'HOME': A, 'AWAY': B}.get(m.get('winner'))
             if g['as'] == g['bs'] and win: g['w'] = win
             else: g.pop('w', None)

@@ -1,5 +1,5 @@
 // Offline support: app shell cached; league data always tried fresh first.
-const CACHE = 'grudge-ledger-v1';
+const CACHE = 'grudge-ledger-v2';
 const SHELL = ['./', 'index.html', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL))); self.skipWaiting(); });
 self.addEventListener('activate', e => {

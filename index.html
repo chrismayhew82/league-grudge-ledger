@@ -234,15 +234,15 @@ function finishLabel(f,n){if(f===1)return'Champ';if(f===2)return'Runner-up';if(f
 /* ---------- derived data ---------- */
 function currentTable(){
   var c=S.current, t={};
-  Object.keys(c.baseline).forEach(function(k){var b=c.baseline[k];t[k]={team:k,w:b.w,l:b.l,pf:b.pf,pa:b.pa};});
-  c.games.forEach(function(g){var A=t[g.a],B=t[g.b];if(!A||!B)return;A.pf+=g.as;A.pa+=g.bs;B.pf+=g.bs;B.pa+=g.as;if(g.as>g.bs){A.w++;B.l++;}else if(g.bs>g.as){B.w++;A.l++;}});
+  Object.keys(c.baseline).forEach(function(k){var b=c.baseline[k];t[k]={team:k,w:b.w,l:b.l,t:b.t||0,pf:b.pf,pa:b.pa};});
+  c.games.forEach(function(g){var A=t[g.a],B=t[g.b];if(!A||!B)return;A.pf+=g.as;A.pa+=g.bs;B.pf+=g.bs;B.pa+=g.as;if(g.as>g.bs){A.w++;B.l++;}else if(g.bs>g.as){B.w++;A.l++;}else{A.t++;B.t++;}});
   var rows=Object.keys(t).map(function(k){var r=t[k];r.pf=round2(r.pf);r.pa=round2(r.pa);return r;});
-  rows.sort(function(a,b){return b.w-a.w||b.pf-a.pf;});
+  rows.sort(function(a,b){return (b.w+(b.t||0)/2)-(a.w+(a.t||0)/2)||b.pf-a.pf;});
   decorate(rows);return rows;
 }
 function decorate(rows){
   var n=rows.length,apf=rows.reduce(function(s,r){return s+r.pf;},0)/n,apa=rows.reduce(function(s,r){return s+r.pa;},0)/n;
-  rows.forEach(function(r,i){r.rank=i+1;var g=r.w+r.l;r.pct=g?r.w/g:0;r.pfr=apf?r.pf/apf:1;r.par=apa?r.pa/apa:1;});
+  rows.forEach(function(r,i){r.rank=i+1;var tt=r.t||0,g=r.w+r.l+tt;r.pct=g?(r.w+tt/2)/g:0;r.pfr=apf?r.pf/apf:1;r.par=apa?r.pa/apa:1;});
   return rows;
 }
 function currentWeek(){var w=S.current.baselineWeek||0;S.current.games.forEach(function(g){if(g.wk>w)w=g.wk;});return w;}
@@ -254,12 +254,12 @@ function allSeasons(){
 function allTime(){
   var seasons=allSeasons(),m={};
   seasons.forEach(function(s){var n=s.teams.length;s.teams.forEach(function(t,i){
-    var a=m[t.team]||(m[t.team]={team:t.team,w:0,l:0,pfr:[],par:[],mp:0,spoon:0,fin:{},seasons:0,lastTitle:null,firstYear:s.year,pf:0});
-    a.w+=t.w;a.l+=t.l;a.pfr.push(t.pfr);a.par.push(t.par);a.seasons++;a.pf+=t.pf;if(s.year<a.firstYear)a.firstYear=s.year;
+    var a=m[t.team]||(m[t.team]={team:t.team,w:0,l:0,t:0,pfr:[],par:[],mp:0,spoon:0,fin:{},seasons:0,lastTitle:null,firstYear:s.year,pf:0});
+    a.w+=t.w;a.l+=t.l;a.t+=t.t||0;a.pfr.push(t.pfr);a.par.push(t.par);a.seasons++;a.pf+=t.pf;if(s.year<a.firstYear)a.firstYear=s.year;
     if(i===0)a.mp++; if(i===n-1)a.spoon++;
     if(!s.live&&t.finish){var key=t.finish===n?'turd':t.finish;a.fin[key]=(a.fin[key]||0)+1;if(t.finish===1&&(a.lastTitle==null||s.year>a.lastTitle))a.lastTitle=s.year;}
   });});
-  return Object.keys(m).map(function(k){var a=m[k];a.pct=a.w/(a.w+a.l);a.pfv=avg(a.pfr);a.pav=avg(a.par);a.champ=a.fin[1]||0;a.ru=a.fin[2]||0;a.third=a.fin[3]||0;a.turd=a.fin.turd||0;return a;});
+  return Object.keys(m).map(function(k){var a=m[k];a.pct=(a.w+a.t/2)/(a.w+a.l+a.t);a.pfv=avg(a.pfr);a.pav=avg(a.par);a.champ=a.fin[1]||0;a.ru=a.fin[2]||0;a.third=a.fin[3]||0;a.turd=a.fin.turd||0;return a;});
 }
 function avg(a){return a.reduce(function(s,x){return s+x;},0)/a.length;}
 function isActive(a){return !!S.current.baseline[a.team||a];}
@@ -267,13 +267,13 @@ function isActive(a){return !!S.current.baseline[a.team||a];}
 /* ---------- trash talk ---------- */
 function roasts(cur,at){
   var out=[],n=cur.length,top=cur[0],bot=cur[n-1],wk=currentWeek();
-  out.push(top.team+' leads '+S.current.year+' at '+top.w+'-'+top.l+'. Enjoy it, it is week '+wk+'.');
+  out.push(top.team+' leads '+S.current.year+' at '+rec(top)+'. Enjoy it, it is week '+wk+'.');
   if(bot.w===0)out.push(bot.team+' is 0-'+bot.l+'. Someone check they know the season started.');
-  else out.push(bot.team+' props up the table at '+bot.w+'-'+bot.l+'. Lineup set by a Magic 8-Ball.');
+  else out.push(bot.team+' props up the table at '+rec(bot)+'. Lineup set by a Magic 8-Ball.');
   var mostPA=cur.slice().sort(function(a,b){return b.pa-a.pa;})[0];
   out.push(mostPA.team+' has had '+fmt(mostPA.pa,1)+' points dropped on them. The schedule-maker has a personal vendetta.');
-  cur.forEach(function(r){if(r.pfr>1.02&&r.pct<0.5)out.push(r.team+' is scoring '+ratio(r.pfr)+' of league average and still '+r.w+'-'+r.l+'. Daylight robbery.');
-    if(r.pfr<0.98&&r.pct>0.5)out.push(r.team+' is '+r.w+'-'+r.l+' on below-average points. Pure, uncut grift.');});
+  cur.forEach(function(r){if(r.pfr>1.02&&r.pct<0.5)out.push(r.team+' is scoring '+ratio(r.pfr)+' of league average and still '+rec(r)+'. Daylight robbery.');
+    if(r.pfr<0.98&&r.pct>0.5)out.push(r.team+' is '+rec(r)+' on below-average points. Pure, uncut grift.');});
   at=at.filter(isActive);
   var spoon=at.slice().sort(function(a,b){return b.spoon-a.spoon;})[0];
   if(spoon.spoon>1)out.push(spoon.team+' owns '+spoon.spoon+' wooden spoons. Nearly enough for a cutlery set.');
@@ -320,8 +320,8 @@ function renderBoard(cur,at,wk){
     ]),
     el('div',{class:'lights'},[
       light('Season · Week',S.current.year+' · W'+wk,cur.length+' managers'),
-      light('Top of the table',top.team,top.w+'-'+top.l+' · '+fmt(top.pf,1)+' PF'),
-      light('Basement',bot.team,bot.w+'-'+bot.l+' · '+fmt(bot.pa,1)+' PA'),
+      light('Top of the table',top.team,rec(top)+' · '+fmt(top.pf,1)+' PF'),
+      light('Basement',bot.team,rec(bot)+' · '+fmt(bot.pa,1)+' PA'),
       light('Defending champ',lastChamp?lastChamp.team:'—',lastSeason?lastSeason.year+' title':'')
     ]),
     el('div',{class:'ticker','aria-label':'Trash talk'},[el('div',{class:'ticker-track'},r.map(function(t){return el('span',{text:t});}))])
@@ -332,8 +332,8 @@ function renderMatchups(){
   var upd='';try{upd=new Date(L.updated).toLocaleString('en-AU',{timeZone:'Australia/Brisbane',weekday:'short',hour:'numeric',minute:'2-digit'});}catch(e){upd=L.updated;}
   function side(name,tn,score,fav){return el('div',{class:'mu-side'+(fav?' fav':'')},[el('div',{class:'who',text:name}),el('div',{class:'sc',text:fmt(score,1)}),el('div',{class:'tn',text:tn||''})]);}
   var cards=L.matchups.map(function(x){
-    var pa=x.ap==null?0.5:x.ap,pb=x.bp==null?1-pa:x.bp,favA=x.final?x.as>x.bs:pa>=pb,favB=x.final?x.bs>x.as:pb>pa;
-    if(x.final){pa=x.as>x.bs?1:0;pb=1-pa;}
+    var pa=x.ap==null?0.5:x.ap,pb=x.bp==null?1-pa:x.bp,favA=x.final?x.as>=x.bs:pa>=pb,favB=x.final?x.bs>=x.as:pb>pa;
+    if(x.final){pa=x.as>x.bs?1:x.as<x.bs?0:0.5;pb=1-pa;}
     var st=x.final?['final','Final']:(x.as+x.bs>0?['live','Live']:['soon','Not started']);
     return el('article',{class:'mu','aria-label':x.a+' versus '+x.b},[
       side(x.a,x.an,x.as,favA),
@@ -348,18 +348,19 @@ function renderMatchups(){
 }
 function light(l,v,s){return el('div',{class:'light'},[el('div',{class:'lbl',text:l}),el('div',{class:'val',text:v}),el('div',{class:'sub',text:s})]);}
 
+function rec(r){return r.w+'-'+r.l+(r.t?'-'+r.t:'');}
 function renderCurrent(cur,wk){
-  var n=cur.length;
+  var n=cur.length,anyT=cur.some(function(r){return r.t>0;});
   var head=el('div',{class:'sec-head'},[
     el('div',null,[el('div',{class:'eyebrow',text:'Live season'}),el('h2',{text:S.current.year+' standings after week '+wk})]),
     el('div',{class:'ro',text:'Auto-updates from ESPN'})
   ]);
-  var tbl=el('table',null,[el('thead',null,[el('tr',null,['#','Team','W','L','Win%','PF','PF v avg','PA','PA v avg'].map(function(h,i){return el('th',{class:i<2?'l':null,text:h});}))]),
+  var tbl=el('table',null,[el('thead',null,[el('tr',null,['#','Team','W','L'].concat(anyT?['T']:[],['Win%','PF','PF v avg','PA','PA v avg']).map(function(h,i){return el('th',{class:i<2?'l':null,text:h});}))]),
     el('tbody',null,cur.map(function(r,i){
       var tags=[];if(i===0)tags.push(el('span',{class:'tag lead',text:'Top dog'}));if(i===n-1)tags.push(el('span',{class:'tag cellar',text:'Cellar'}));
       if(r.pfr>1.02&&r.pct<0.5)tags.push(el('span',{class:'tag robbed',text:'Robbed'}));if(r.pfr<0.98&&r.pct>0.5)tags.push(el('span',{class:'tag grift',text:'Grifter'}));
-      return el('tr',null,[el('td',{class:'l'},[el('span',{class:'rank',text:r.rank})]),el('td',{class:'team'},[r.team].concat(tags)),el('td',{text:r.w}),el('td',{text:r.l}),el('td',{text:pct(r.pct)}),
-        el('td',{text:fmt(r.pf,1)}),el('td',{class:r.pfr>=1?'up':'down',text:ratio(r.pfr)}),el('td',{text:fmt(r.pa,1)}),el('td',{class:r.par<=1?'up':'down',text:ratio(r.par)})]);
+      return el('tr',null,[el('td',{class:'l'},[el('span',{class:'rank',text:r.rank})]),el('td',{class:'team'},[r.team].concat(tags)),el('td',{text:r.w}),el('td',{text:r.l})].concat(anyT?[el('td',{text:r.t})]:[],[el('td',{text:pct(r.pct)}),
+        el('td',{text:fmt(r.pf,1)}),el('td',{class:r.pfr>=1?'up':'down',text:ratio(r.pfr)}),el('td',{text:fmt(r.pa,1)}),el('td',{class:r.par<=1?'up':'down',text:ratio(r.par)})]));
     }))]);
   var sec=el('section',{class:'sec',id:'live'},[head]);
   sec.appendChild(el('div',{class:'split'},[
@@ -381,9 +382,9 @@ function renderLog(){
   if(!games.length){wrap.appendChild(el('div',{class:'empty',text:'Weeks 1–'+S.current.baselineWeek+' are carried over as totals from the spreadsheet. Logged weeks from here on will show each result.'}));return wrap;}
   var list=el('div',{class:'log'});
   games.forEach(function(g){
-    var aw=g.as>g.bs;
-    var res=el('div',{class:'res'},[el(aw?'b':'span',{class:aw?null:'lo',text:g.a+' '+fmt(g.as,2)}),' – ',el(!aw?'b':'span',{class:!aw?null:'lo',text:fmt(g.bs,2)+' '+g.b}),
-      el('span',{class:'lo',text:'  · margin '+fmt(Math.abs(g.as-g.bs),2)+(Math.abs(g.as-g.bs)<3?' (heartbreaker)':Math.abs(g.as-g.bs)>40?' (call the mercy rule)':'')})]);
+    var aw=g.as>g.bs,tie=g.as===g.bs;
+    var res=el('div',{class:'res'},[el(aw||tie?'b':'span',{class:aw||tie?null:'lo',text:g.a+' '+fmt(g.as,2)}),' – ',el(!aw||tie?'b':'span',{class:!aw||tie?null:'lo',text:fmt(g.bs,2)+' '+g.b}),
+      el('span',{class:'lo',text:tie?'  · tie (kiss your sister)':'  · margin '+fmt(Math.abs(g.as-g.bs),2)+(Math.abs(g.as-g.bs)<3?' (heartbreaker)':Math.abs(g.as-g.bs)>40?' (call the mercy rule)':'')})]);
     var kids=[el('div',{class:'wk',text:'WK '+g.wk}),res];
     if(canWrite)kids.push(delBtn(g.id));
     list.appendChild(el('div',{class:'game'},kids));
@@ -526,7 +527,7 @@ function renderHall(at){
     if(!facts.length)facts.push('Played '+a.seasons+' seasons. Left before the Turd found them.');
     return el('div',{class:'hof-card'},[
       el('div',null,[el('div',{class:'nm',text:a.team}),el('div',{class:'yrs',text:'Retired · '+lo+'–'+hi+' · '+a.seasons+' seasons'})]),
-      el('div',{class:'hof-stats'},[st(a.w+'-'+a.l,'Record'),st(pct(a.pct),'Win%'),st(a.champ,'Rings'),st(ratio(a.pfv),'PF v avg')]),
+      el('div',{class:'hof-stats'},[st(rec(a),'Record'),st(pct(a.pct),'Win%'),st(a.champ,'Rings'),st(ratio(a.pfv),'PF v avg')]),
       el('div',{class:'hof-stats'},[st(a.ru,'Runner-up'),st(a.third,'3rd'),st(a.turd,'Turds'),st(a.mp,'Minor prem.')]),
       el('ul',null,facts.map(function(f){return el('li',{text:f});}))]);});
   return el('section',{class:'sec',id:'hof'},[
@@ -636,7 +637,7 @@ function drawLuck(cur){
     var ly=cy-11;function hit(y){return placed.some(function(p){return Math.abs(p.x-cx)<60&&Math.abs(p.y-y)<14;});}if(hit(ly))ly=cy+22;if(hit(ly))ly=cy-26;placed.push({x:cx,y:ly});
     var anchor=cx>W-70?'end':cx<m.l+40?'start':'middle';
     g.appendChild(s('text',{x:cx,y:ly,'text-anchor':anchor,'font-size':14,'font-weight':600,fill:'#eef3ea'},r.team));
-    function show(){tip.hidden=false;tip.textContent=r.team+' · '+r.w+'-'+r.l+' · PF '+ratio(r.pfr)+' · PA '+ratio(r.par)+(r.finish?' · '+finishLabel(r.finish,r.n):'');var L=Math.min(Math.max(cx/W*host.clientWidth,90),host.clientWidth-90);tip.style.left=L+'px';tip.style.top=(cy/H*host.clientHeight)+'px';}
+    function show(){tip.hidden=false;tip.textContent=r.team+' · '+rec(r)+' · PF '+ratio(r.pfr)+' · PA '+ratio(r.par)+(r.finish?' · '+finishLabel(r.finish,r.n):'');var L=Math.min(Math.max(cx/W*host.clientWidth,90),host.clientWidth-90);tip.style.left=L+'px';tip.style.top=(cy/H*host.clientHeight)+'px';}
     function hide(){tip.hidden=true;}
     g.addEventListener('mouseenter',show);g.addEventListener('mouseleave',hide);g.addEventListener('focus',show);g.addEventListener('blur',hide);g.addEventListener('touchstart',show,{passive:true});
     svg.appendChild(g);});

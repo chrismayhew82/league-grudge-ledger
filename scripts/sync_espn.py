@@ -57,7 +57,7 @@ def main():
         if h not in TM or a not in TM: continue
         A, B = TM[h], TM[a]
         hp, ap = m['home'].get('totalPoints', 0), m['away'].get('totalPoints', 0)
-        if m.get('winner') not in ('UNDECIDED', None) and wk <= reg and wk >= cur - 3 and hp != ap:
+        if m.get('winner') not in ('UNDECIDED', None) and wk <= reg and wk >= cur - 3:
             key = (wk, frozenset((A, B))); g = idx.get(key)
             if g is None:
                 g = {'id': f'espn{wk}_{h}_{a}', 'wk': wk, 'a': A, 'as': round(hp, 2), 'b': B, 'bs': round(ap, 2)}

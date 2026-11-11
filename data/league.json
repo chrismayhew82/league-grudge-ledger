@@ -327,6 +327,14 @@
     "bs": 76.5
    },
    {
+    "id": "espn9_6_1",
+    "wk": 9,
+    "a": "TimO",
+    "as": 115.0,
+    "b": "Mayhew",
+    "bs": 115.0
+   },
+   {
     "id": "espn9_7_5",
     "wk": 9,
     "a": "Kingy",
@@ -1001,7 +1009,7 @@
  "live": {
   "week": 10,
   "playoffs": false,
-  "updated": "2026-11-11T07:24+10:00",
+  "updated": "2026-11-11T20:04+10:00",
   "matchups": [
    {
     "a": "Doug",
@@ -1020,12 +1028,12 @@
     "a": "Mayhew",
     "an": "Boiling Kittle",
     "as": 0,
-    "ap": 0.45,
-    "aj": 99,
+    "ap": 0.54,
+    "aj": 109,
     "b": "Kingy",
     "bn": "Purdy Mouth",
     "bs": 0,
-    "bp": 0.55,
+    "bp": 0.46,
     "bj": 104,
     "final": false
    },
@@ -1033,13 +1041,13 @@
     "a": "Proud",
     "an": "TUTEN MY OWN HORN",
     "as": 0,
-    "ap": 0.33,
+    "ap": 0.26,
     "aj": 87,
     "b": "Joe",
     "bn": "Peter Mahomes",
     "bs": 0,
-    "bp": 0.67,
-    "bj": 106,
+    "bp": 0.74,
+    "bj": 116,
     "final": false
    },
    {

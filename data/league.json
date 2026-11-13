@@ -1010,32 +1010,32 @@
  "live": {
   "week": 10,
   "playoffs": false,
-  "updated": "2026-11-13T12:03+10:00",
+  "updated": "2026-11-13T12:48+10:00",
   "matchups": [
    {
     "a": "Doug",
     "an": "King Henry VIII",
     "as": 0,
-    "ap": 0.44,
+    "ap": 0.45,
     "aj": 98,
     "b": "Mr Coin",
     "bn": "Mr Coin 2.0",
-    "bs": 1.0,
-    "bp": 0.56,
-    "bj": 105,
+    "bs": 1.5,
+    "bp": 0.55,
+    "bj": 103,
     "final": false
    },
    {
     "a": "Mayhew",
     "an": "Boiling Kittle",
     "as": 0,
-    "ap": 0.53,
+    "ap": 0.51,
     "aj": 110,
     "b": "Kingy",
     "bn": "Purdy Mouth",
-    "bs": 2.0,
-    "bp": 0.47,
-    "bj": 107,
+    "bs": 5.5,
+    "bp": 0.49,
+    "bj": 109,
     "final": false
    },
    {

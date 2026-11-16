@@ -1010,7 +1010,7 @@
  "live": {
   "week": 10,
   "playoffs": false,
-  "updated": "2026-11-16T14:12+10:00",
+  "updated": "2026-11-16T16:11+10:00",
   "matchups": [
    {
     "a": "Doug",
@@ -1035,33 +1035,33 @@
     "bn": "Purdy Mouth",
     "bs": 171.5,
     "bp": 0.99,
-    "bj": 173,
+    "bj": 172,
     "final": false
    },
    {
     "a": "Proud",
     "an": "TUTEN MY OWN HORN",
     "as": 95.5,
-    "ap": 0.99,
+    "ap": 1.0,
     "aj": 96,
     "b": "Joe",
     "bn": "Peter Mahomes",
     "bs": 68.5,
-    "bp": 0.01,
-    "bj": 71,
+    "bp": 0.0,
+    "bj": 68,
     "final": false
    },
    {
     "a": "Andrew",
     "an": "No Fourths Given",
     "as": 154.0,
-    "ap": 0.99,
-    "aj": 165,
+    "ap": 1.0,
+    "aj": 154,
     "b": "TimO",
     "bn": "Run CMC",
     "bs": 130.5,
-    "bp": 0.01,
-    "bj": 133,
+    "bp": 0.0,
+    "bj": 130,
     "final": false
    }
   ]

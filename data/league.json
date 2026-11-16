@@ -1010,7 +1010,7 @@
  "live": {
   "week": 10,
   "playoffs": false,
-  "updated": "2026-11-16T12:56+10:00",
+  "updated": "2026-11-16T14:12+10:00",
   "matchups": [
    {
     "a": "Doug",
@@ -1033,9 +1033,9 @@
     "aj": 104,
     "b": "Kingy",
     "bn": "Purdy Mouth",
-    "bs": 163.5,
+    "bs": 171.5,
     "bp": 0.99,
-    "bj": 172,
+    "bj": 173,
     "final": false
    },
    {
@@ -1046,22 +1046,22 @@
     "aj": 96,
     "b": "Joe",
     "bn": "Peter Mahomes",
-    "bs": 63.5,
+    "bs": 68.5,
     "bp": 0.01,
-    "bj": 75,
+    "bj": 71,
     "final": false
    },
    {
     "a": "Andrew",
     "an": "No Fourths Given",
-    "as": 143.0,
+    "as": 154.0,
     "ap": 0.99,
-    "aj": 161,
+    "aj": 165,
     "b": "TimO",
     "bn": "Run CMC",
-    "bs": 120.0,
+    "bs": 130.5,
     "bp": 0.01,
-    "bj": 132,
+    "bj": 133,
     "final": false
    }
   ]

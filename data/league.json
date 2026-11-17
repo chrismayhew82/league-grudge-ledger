@@ -342,6 +342,38 @@
     "as": 133.0,
     "b": "Doug",
     "bs": 102.0
+   },
+   {
+    "id": "espn10_1_7",
+    "wk": 10,
+    "a": "Mayhew",
+    "as": 101.5,
+    "b": "Kingy",
+    "bs": 171.5
+   },
+   {
+    "id": "espn10_3_2",
+    "wk": 10,
+    "a": "Proud",
+    "as": 95.5,
+    "b": "Joe",
+    "bs": 68.5
+   },
+   {
+    "id": "espn10_4_6",
+    "wk": 10,
+    "a": "Andrew",
+    "as": 154.0,
+    "b": "TimO",
+    "bs": 130.5
+   },
+   {
+    "id": "espn10_5_8",
+    "wk": 10,
+    "a": "Doug",
+    "as": 96.0,
+    "b": "Mr Coin",
+    "bs": 120.5
    }
   ]
  },
@@ -1006,62 +1038,62 @@
    ]
   }
  ],
- "updated": "17 Nov 2026",
+ "updated": "18 Nov 2026",
  "live": {
-  "week": 10,
+  "week": 11,
   "playoffs": false,
-  "updated": "2026-11-17T14:59+10:00",
+  "updated": "2026-11-18T07:36+10:00",
   "matchups": [
-   {
-    "a": "Doug",
-    "an": "King Henry VIII",
-    "as": 96.0,
-    "ap": 0.0,
-    "aj": 96,
-    "b": "Mr Coin",
-    "bn": "Mr Coin 2.0",
-    "bs": 120.5,
-    "bp": 1.0,
-    "bj": 120,
-    "final": false
-   },
    {
     "a": "Mayhew",
     "an": "Boiling Kittle",
-    "as": 101.5,
-    "ap": 0.0,
-    "aj": 102,
-    "b": "Kingy",
-    "bn": "Purdy Mouth",
-    "bs": 171.5,
-    "bp": 1.0,
-    "bj": 172,
+    "as": 0,
+    "ap": 0.21,
+    "aj": 62,
+    "b": "Doug",
+    "bn": "King Henry VIII",
+    "bs": 0,
+    "bp": 0.79,
+    "bj": 90,
     "final": false
    },
    {
-    "a": "Proud",
-    "an": "TUTEN MY OWN HORN",
-    "as": 95.5,
-    "ap": 1.0,
-    "aj": 96,
-    "b": "Joe",
-    "bn": "Peter Mahomes",
-    "bs": 68.5,
-    "bp": 0.0,
-    "bj": 68,
+    "a": "Mr Coin",
+    "an": "Mr Coin 2.0",
+    "as": 0,
+    "ap": 0.36,
+    "aj": 81,
+    "b": "Proud",
+    "bn": "TUTEN MY OWN HORN",
+    "bs": 0,
+    "bp": 0.64,
+    "bj": 95,
     "final": false
    },
    {
-    "a": "Andrew",
-    "an": "No Fourths Given",
-    "as": 154.0,
-    "ap": 1.0,
-    "aj": 154,
+    "a": "Kingy",
+    "an": "Purdy Mouth",
+    "as": 0,
+    "ap": 0.63,
+    "aj": 100,
+    "b": "Andrew",
+    "bn": "No Fourths Given",
+    "bs": 0,
+    "bp": 0.37,
+    "bj": 86,
+    "final": false
+   },
+   {
+    "a": "Joe",
+    "an": "Peter Mahomes",
+    "as": 0,
+    "ap": 0.34,
+    "aj": 78,
     "b": "TimO",
     "bn": "Run CMC",
-    "bs": 130.5,
-    "bp": 0.0,
-    "bj": 130,
+    "bs": 0,
+    "bp": 0.66,
+    "bj": 95,
     "final": false
    }
   ]

@@ -1042,7 +1042,7 @@
  "live": {
   "week": 11,
   "playoffs": false,
-  "updated": "2026-11-18T07:36+10:00",
+  "updated": "2026-11-18T13:40+10:00",
   "matchups": [
    {
     "a": "Mayhew",
@@ -1087,12 +1087,12 @@
     "a": "Joe",
     "an": "Peter Mahomes",
     "as": 0,
-    "ap": 0.34,
-    "aj": 78,
+    "ap": 0.52,
+    "aj": 97,
     "b": "TimO",
     "bn": "Run CMC",
     "bs": 0,
-    "bp": 0.66,
+    "bp": 0.48,
     "bj": 95,
     "final": false
    }

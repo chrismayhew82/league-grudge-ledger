@@ -1042,19 +1042,19 @@
  "live": {
   "week": 11,
   "playoffs": false,
-  "updated": "2026-11-23T00:48+10:00",
+  "updated": "2026-11-23T01:43+10:00",
   "matchups": [
    {
     "a": "Mayhew",
     "an": "Boiling Kittle",
     "as": 3.0,
-    "ap": 0.22,
-    "aj": 84,
+    "ap": 0.2,
+    "aj": 85,
     "b": "Doug",
     "bn": "King Henry VIII",
     "bs": 32.0,
-    "bp": 0.78,
-    "bj": 111,
+    "bp": 0.8,
+    "bj": 114,
     "final": false
    },
    {
@@ -1074,13 +1074,13 @@
     "a": "Kingy",
     "an": "Purdy Mouth",
     "as": 0,
-    "ap": 0.61,
+    "ap": 0.62,
     "aj": 115,
     "b": "Andrew",
     "bn": "No Fourths Given",
     "bs": 15.0,
-    "bp": 0.39,
-    "bj": 103,
+    "bp": 0.38,
+    "bj": 102,
     "final": false
    },
    {

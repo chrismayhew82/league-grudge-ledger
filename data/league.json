@@ -1042,7 +1042,7 @@
  "live": {
   "week": 11,
   "playoffs": false,
-  "updated": "2026-11-23T01:43+10:00",
+  "updated": "2026-11-23T03:41+10:00",
   "matchups": [
    {
     "a": "Mayhew",
@@ -1061,13 +1061,13 @@
     "a": "Mr Coin",
     "an": "Mr Coin 2.0",
     "as": 0,
-    "ap": 0.56,
+    "ap": 0.66,
     "aj": 112,
     "b": "Proud",
     "bn": "TUTEN MY OWN HORN",
     "bs": 3.5,
-    "bp": 0.44,
-    "bj": 105,
+    "bp": 0.34,
+    "bj": 93,
     "final": false
    },
    {

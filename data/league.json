@@ -374,6 +374,38 @@
     "as": 96.0,
     "b": "Mr Coin",
     "bs": 120.5
+   },
+   {
+    "id": "espn11_1_5",
+    "wk": 11,
+    "a": "Mayhew",
+    "as": 71.0,
+    "b": "Doug",
+    "bs": 124.5
+   },
+   {
+    "id": "espn11_2_6",
+    "wk": 11,
+    "a": "Joe",
+    "as": 96.5,
+    "b": "TimO",
+    "bs": 113.0
+   },
+   {
+    "id": "espn11_7_4",
+    "wk": 11,
+    "a": "Kingy",
+    "as": 105.5,
+    "b": "Andrew",
+    "bs": 96.5
+   },
+   {
+    "id": "espn11_8_3",
+    "wk": 11,
+    "a": "Mr Coin",
+    "as": 155.0,
+    "b": "Proud",
+    "bs": 72.0
    }
   ]
  },
@@ -1038,62 +1070,62 @@
    ]
   }
  ],
- "updated": "23 Nov 2026",
+ "updated": "24 Nov 2026",
  "live": {
-  "week": 11,
+  "week": 12,
   "playoffs": false,
-  "updated": "2026-11-23T15:23+10:00",
+  "updated": "2026-11-24T22:22+10:00",
   "matchups": [
    {
-    "a": "Mayhew",
-    "an": "Boiling Kittle",
-    "as": 71.0,
-    "ap": 0.0,
-    "aj": 71,
-    "b": "Doug",
-    "bn": "King Henry VIII",
-    "bs": 124.5,
-    "bp": 1.0,
-    "bj": 124,
-    "final": false
-   },
-   {
-    "a": "Mr Coin",
-    "an": "Mr Coin 2.0",
-    "as": 147.0,
-    "ap": 0.99,
-    "aj": 154,
+    "a": "Doug",
+    "an": "King Henry VIII",
+    "as": 0,
+    "ap": 0.59,
+    "aj": 101,
     "b": "Proud",
     "bn": "TUTEN MY OWN HORN",
-    "bs": 72.0,
-    "bp": 0.01,
-    "bj": 72,
+    "bs": 0,
+    "bp": 0.41,
+    "bj": 91,
     "final": false
    },
    {
-    "a": "Kingy",
-    "an": "Purdy Mouth",
-    "as": 85.5,
-    "ap": 0.15,
-    "aj": 105,
-    "b": "Andrew",
-    "bn": "No Fourths Given",
-    "bs": 91.0,
-    "bp": 0.85,
-    "bj": 111,
+    "a": "Andrew",
+    "an": "No Fourths Given",
+    "as": 0,
+    "ap": 0.47,
+    "aj": 90,
+    "b": "Mayhew",
+    "bn": "Boiling Kittle",
+    "bs": 0,
+    "bp": 0.53,
+    "bj": 93,
+    "final": false
+   },
+   {
+    "a": "TimO",
+    "an": "Run CMC",
+    "as": 0,
+    "ap": 0.57,
+    "aj": 113,
+    "b": "Mr Coin",
+    "bn": "Mr Coin 2.0",
+    "bs": 0,
+    "bp": 0.43,
+    "bj": 104,
     "final": false
    },
    {
     "a": "Joe",
     "an": "Peter Mahomes",
-    "as": 96.5,
-    "ap": 0.01,
-    "aj": 96,
-    "b": "TimO",
-    "bn": "Run CMC",
-    "bs": 96.5,
-    "bp": 0.99,
-    "bj": 123,
+    "as": 0,
+    "ap": 0.35,
+    "aj": 105,
+    "b": "Kingy",
+    "bn": "Purdy Mouth",
+    "bs": 0,
+    "bp": 0.65,
+    "bj": 124,
     "final": false
    }
   ]
